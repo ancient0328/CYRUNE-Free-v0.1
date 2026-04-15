@@ -18,18 +18,11 @@ CYRUNE Free v0.1 is the public single-user Control OS publication unit for the c
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
 - [Free Source](free/v0.1/0/)
 
-## GitHub Publication Surfaces
+## What You Get
 
 - Tracked public branch surface: `README.md`, `docs/`, `scripts/`, `free/`
 - GitHub-hosted non-tracked carrier: `cyrune-free-v0.1.tar.gz`
 - Docs are auxiliary and do not replace the carrier
-
-## Tracked Public Branch Surface
-
-- `README.md`
-- `docs/`
-- `scripts/`
-- `free/`
 
 ## Not Included
 
@@ -40,7 +33,7 @@ CYRUNE Free v0.1 is the public single-user Control OS publication unit for the c
 
 GETTING_STARTED_BODY = """# GETTING_STARTED
 
-Run the three scripts in order. Do not skip steps or change the sequence.
+Run the three scripts in order from the tracked public branch surface. `prepare-public-run.sh` downloads the exact release asset `cyrune-free-v0.1.tar.gz`, normalizes the required non-tracked carrier into `target/public-run/`, and then prepares the local runtime state. Do not skip steps or change the sequence.
 
 ## 1. prepare-public-run.sh
 
@@ -67,7 +60,7 @@ These remediation notes are limited to the three public scripts and do not exten
 
 ## prepare-public-run.sh
 
-If this step fails, restore the copied Free source tree or host build prerequisites, then rerun ./scripts/prepare-public-run.sh.
+If this step fails, confirm the exact release asset URL is reachable, confirm carrier download and extraction succeeded, then rerun ./scripts/prepare-public-run.sh.
 
 ## doctor.sh
 
@@ -86,11 +79,23 @@ PUBLIC_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 FREE_ROOT="$PUBLIC_ROOT/free/v0.1/0"
 STATE_ROOT="$FREE_ROOT/target/public-run"
 CYRUNE_HOME="$STATE_ROOT/home"
+CARRIER_URL="https://github.com/ancient0328/CYRUNE-Free-v0.1/releases/download/v0.1/cyrune-free-v0.1.tar.gz"
+CARRIER_ARCHIVE="$STATE_ROOT/cyrune-free-v0.1.tar.gz"
+CARRIER_EXTRACT_ROOT="$STATE_ROOT/carrier"
+CARRIER_PACKAGE_ROOT="$CARRIER_EXTRACT_ROOT/cyrune-free-v0.1"
+CARRIER_HOME_TEMPLATE="$CARRIER_PACKAGE_ROOT/share/cyrune/home-template"
+CARRIER_BUNDLE_MODEL="$CARRIER_PACKAGE_ROOT/share/cyrune/bundle-root/embedding/artifacts/multilingual-e5-small/model.onnx"
+CARRIER_HOME_MODEL="$CARRIER_HOME_TEMPLATE/embedding/artifacts/multilingual-e5-small/model.onnx"
 
 cd "$FREE_ROOT"
 rm -rf "$STATE_ROOT"
+install -d "$STATE_ROOT/bin" "$STATE_ROOT/home" "$CARRIER_EXTRACT_ROOT"
+curl --fail --silent --show-error --location "$CARRIER_URL" --output "$CARRIER_ARCHIVE"
+tar -xzf "$CARRIER_ARCHIVE" -C "$CARRIER_EXTRACT_ROOT"
+test -f "$CARRIER_BUNDLE_MODEL"
+test -f "$CARRIER_HOME_MODEL"
+cp -R "$CARRIER_HOME_TEMPLATE"/. "$STATE_ROOT/home/"
 cargo build --quiet --release --manifest-path "$FREE_ROOT/Cargo.toml" --bin cyr --bin cyrune-daemon
-install -d "$STATE_ROOT/bin" "$STATE_ROOT/home"
 install -m 0755 "$FREE_ROOT/target/release/cyr" "$STATE_ROOT/bin/cyr"
 install -m 0755 "$FREE_ROOT/target/release/cyrune-daemon" "$STATE_ROOT/bin/cyrune-daemon"
 """

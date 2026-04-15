@@ -513,6 +513,8 @@ def create_blob(data: bytes, expected_sha: str) -> str:
 def create_tree(local_blobs: list[LocalBlob]) -> str:
     tree_entries = []
     for blob in local_blobs:
+        if blob.mode not in {"100644", "100755"}:
+            raise fail(f"unexpected local blob mode for {blob.path}: {blob.mode}")
         tree_entries.append(
             {
                 "path": blob.path,

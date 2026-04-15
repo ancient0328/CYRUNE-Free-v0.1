@@ -11,18 +11,11 @@ CYRUNE Free v0.1 is the public single-user Control OS publication unit for the c
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
 - [Free Source](free/v0.1/0/)
 
-## GitHub Publication Surfaces
+## What You Get
 
 - Tracked public branch surface: `README.md`, `docs/`, `scripts/`, `free/`
 - GitHub-hosted non-tracked carrier: `cyrune-free-v0.1.tar.gz`
 - Docs are auxiliary and do not replace the carrier
-
-## Tracked Public Branch Surface
-
-- `README.md`
-- `docs/`
-- `scripts/`
-- `free/`
 
 ## Not Included
 

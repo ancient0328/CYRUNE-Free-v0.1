@@ -184,6 +184,15 @@ def copy_preserving_mode(source: Path, destination: Path) -> None:
     destination.chmod(stat.S_IMODE(source.stat().st_mode))
 
 
+def resolve_git_blob_mode(path: Path) -> str:
+    if not path.is_file() or path.is_symlink():
+        raise fail(f"invalid blob mode source: {path}")
+    mode_bits = stat.S_IMODE(path.stat().st_mode)
+    if mode_bits & stat.S_IXUSR:
+        return "100755"
+    return "100644"
+
+
 def collect_snapshot_state(snapshot_root: Path) -> tuple[list[SnapshotBlob], set[str], set[str]]:
     blobs: list[SnapshotBlob] = []
     directories: set[str] = set()
@@ -202,7 +211,7 @@ def collect_snapshot_state(snapshot_root: Path) -> tuple[list[SnapshotBlob], set
         blobs.append(
             SnapshotBlob(
                 path=relative_path.as_posix(),
-                mode=f"{stat.S_IMODE(path.stat().st_mode):06o}",
+                mode=resolve_git_blob_mode(path),
                 data=path.read_bytes(),
             )
         )

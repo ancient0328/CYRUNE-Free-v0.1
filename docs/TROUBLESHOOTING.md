@@ -4,7 +4,7 @@ These remediation notes are limited to the three public scripts and do not exten
 
 ## prepare-public-run.sh
 
-If this step fails, restore the copied Free source tree or host build prerequisites, then rerun ./scripts/prepare-public-run.sh.
+If this step fails, confirm the exact release asset URL is reachable, confirm carrier download and extraction succeeded, then rerun ./scripts/prepare-public-run.sh.
 
 ## doctor.sh
 
