@@ -237,11 +237,11 @@ END OF TERMS AND CONDITIONS
 
 
 def repo_root() -> Path:
-    return Path(__file__).resolve().parents[6]
+    return Path(__file__).resolve().parents[1]
 
 
 def workspace_root() -> Path:
-    return Path(__file__).resolve().parents[1]
+    return repo_root()
 
 
 def shipping_root() -> Path:
@@ -288,7 +288,7 @@ def cargo_metadata(manifest_path: Path) -> dict[str, Any]:
             "--manifest-path",
             str(manifest_path),
         ],
-        cwd=repo_root(),
+        cwd=workspace_root(),
     )
     return json.loads(result.stdout)
 
@@ -388,13 +388,13 @@ def make_executable(path: Path) -> None:
     path.chmod(mode | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
 
 
-def maybe_codesign(binary_path: Path, proof_dir: Path) -> str:
+def maybe_codesign(binary_path: Path, guard_dir: Path) -> str:
     if platform.system() != "Darwin":
         return "hash-only"
     run(["codesign", "--force", "--sign", "-", str(binary_path)])
     verification = run(["codesign", "--verify", "--verbose=2", str(binary_path)])
-    proof_dir.mkdir(parents=True, exist_ok=True)
-    (proof_dir / f"{binary_path.name}-codesign.txt").write_text(
+    guard_dir.mkdir(parents=True, exist_ok=True)
+    (guard_dir / f"{binary_path.name}-codesign.txt").write_text(
         verification.stdout + verification.stderr,
         encoding="utf-8",
     )
@@ -574,14 +574,14 @@ def main() -> int:
     root = repo_root()
     workspace = workspace_root()
     output_root = shipping_root()
-    proof_dir = output_root / "proof"
+    guard_dir = output_root / "guard"
     package_root = output_root / ARCHIVE_BASENAME
     archive_path = output_root / f"{ARCHIVE_BASENAME}.tar.gz"
     generated_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
     if output_root.exists():
         shutil.rmtree(output_root)
-    proof_dir.mkdir(parents=True, exist_ok=True)
+    guard_dir.mkdir(parents=True, exist_ok=True)
 
     manifest_path = workspace / "Cargo.toml"
     run(
@@ -596,7 +596,7 @@ def main() -> int:
             "--bin",
             "cyrune-runtime-cli",
         ],
-        cwd=root,
+        cwd=workspace,
     )
 
     release_dir = workspace / "target" / "release"
@@ -606,15 +606,15 @@ def main() -> int:
         raise FileNotFoundError("release binaries are missing after cargo build --release")
 
     staging_home = output_root / "staging-home"
-    adapter_root = root / "Adapter" / "v0.1" / "0"
+    adapter_root = workspace / "Adapter" / "v0.1" / "0"
     bundle_resources_root = workspace / "resources" / "bundle-root"
     env = os.environ.copy()
     env["CYRUNE_HOME"] = str(staging_home)
-    env["CRANE_ROOT"] = str(root)
+    env["CRANE_ROOT"] = str(workspace)
     env["CYRUNE_DAEMON_BIN"] = str(daemon_bin)
-    doctor = run([str(runtime_bin), "doctor"], cwd=root, env=env)
+    doctor = run([str(runtime_bin), "doctor"], cwd=workspace, env=env)
     doctor_health = json.loads(doctor.stdout)
-    (proof_dir / "doctor-health.json").write_text(
+    (guard_dir / "doctor-health.json").write_text(
         json.dumps(doctor_health, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
     )
@@ -641,8 +641,8 @@ def main() -> int:
     write_license_bundle(package_root / "share" / "licenses", "share/sbom/cyrune-free-v0.1.spdx.json")
 
     signature_modes = {
-        "cyr": maybe_codesign(package_root / "bin" / "cyr", proof_dir),
-        "cyrune-daemon": maybe_codesign(package_root / "bin" / "cyrune-daemon", proof_dir),
+        "cyr": maybe_codesign(package_root / "bin" / "cyr", guard_dir),
+        "cyrune-daemon": maybe_codesign(package_root / "bin" / "cyrune-daemon", guard_dir),
     }
     if len(set(signature_modes.values())) == 1:
         signature_mode = next(iter(signature_modes.values()))
@@ -662,7 +662,7 @@ def main() -> int:
 
     write_hash_list(package_root)
     create_archive(package_root, archive_path)
-    (proof_dir / "archive-sha256.txt").write_text(
+    (guard_dir / "archive-sha256.txt").write_text(
         f"{sha256_file(archive_path)}  {archive_path.name}\n",
         encoding="utf-8",
     )
@@ -672,7 +672,7 @@ def main() -> int:
         "version": VERSION,
         "package_root": str(package_root),
         "archive_path": str(archive_path),
-        "doctor_health_path": str(proof_dir / "doctor-health.json"),
+        "doctor_health_path": str(guard_dir / "doctor-health.json"),
         "signature_mode": signature_mode,
     }
     print(json.dumps(result, indent=2, sort_keys=True))

@@ -183,7 +183,7 @@ current ship-goal-side parent implementation lane と parent validation lane は
 同日、separate future scope `GPC` が fixed problem として追加され、`free/v0.1/0` stand-alone complete root、`public/free-v0.1/free/v0.1/0` GitHub publication branch、tracked public branch surface と GitHub-hosted non-tracked carrier の exact boundary を再固定する ADR / implementation roadmap / test roadmap が authority として追加された。  
 同日、`GPCI-A` と `GPCI-B` は完了し、split semantics と GitHub publication carrier contract authority が current source へ同期した。  
 同日、`GPCI-C` と `GPCI-D` は完了し、tracked public branch materialization、carrier-aware publish path、implementation-state docs sync が実装 lane として complete に到達した。  
-したがって、現時点の current accepted scope 側 next owner / task は `none / none` であり、child `SGI-D / SGID-S1` と child `SGT-D / SGTD-T4` は closed child targets として参照し、reopen しない。separate future scope `GPC` は `implementation complete / validation lane GPCT-A-B complete / fixed problem solved 未主張` であり、validation / closeout owner は `GPCT-C / GPCTC-T1` 以降の test roadmap 側である。
+したがって、現時点の current accepted scope 側 next owner / task は `none / none` であり、child `SGI-D / SGID-S1` と child `SGT-D / SGTD-T4` は closed child targets として参照し、reopen しない。user-fixed 2 目的の operational lane では `20260423-gpc-operational-completion-implementation-roadmap.md` と `20260423-gpc-operational-completion-test-roadmap.md` を current roadmap authority として扱う。prior narrow-purpose roadmap pair は narrow semantics / prior proof authority としてのみ参照し、tracked GitHub branch、GitHub release carrier、public checkout preparation を operational completion condition から外す根拠にしてはならない。
 
 ## 10. public boundary publication design lane
 
@@ -232,12 +232,13 @@ fixed problem `GPC` は、`free/v0.1/0` を stand-alone complete root、`public/
 
 現時点の到達点は次である。
 
-1. implementation authority は `20260415-github-publication-carrier-implementation-roadmap.md`
-2. validation / closeout authority は `20260415-github-publication-carrier-test-roadmap.md`
-3. implementation lane `GPCI-A` から `GPCI-D` は complete
-4. `free/v0.1/0` stand-alone semantics、`public/.../0` publication branch semantics、tracked public branch surface、GitHub-hosted non-tracked carrier は canonical / implementation docs / script 実装で同期済み
-5. `GPC` future scope は `implementation complete / proof 未主張` であり、fixed problem solved claim は未主張である
-6. current accepted scope `none / none` は維持し、`GPC` future scope を理由に reopen しない
+1. current operational implementation authority は `20260423-gpc-operational-completion-implementation-roadmap.md`
+2. current operational validation / closeout authority は `20260423-gpc-operational-completion-test-roadmap.md`
+3. `20260423-gpc-narrow-fixed-problem-implementation-roadmap.md` と `20260423-gpc-narrow-fixed-problem-test-roadmap.md` は prior narrow-purpose roadmap pair としてのみ参照し、operational completion authority と混同しない
+4. current operational roadmap が採用する implementation completion conditions は `free/v0.1/0` stand-alone semantics、`public/.../0` publication branch semantics、tracked GitHub branch、GitHub release carrier、public checkout preparation の全 operational surface である
+5. exact tracked publication-branch surface と publication-branch state sync は、remote publication branch surface の入力 state として扱い、remote publication の代替として扱わない
+6. non-tracked carrier、remote publication execution、exact asset URL、public checkout preparation は user-fixed 2 目的の operational surface として採用し、目的外へ退避しない
+7. current accepted scope `none / none` は維持しつつ、user-fixed 2 目的の operational lane は本 operational roadmap pair に従う
 
 ## 12. 新 scope を起こす条件
 
@@ -265,6 +266,6 @@ fixed problem `GPC` は、`free/v0.1/0` を stand-alone complete root、`public/
 4. D7 は complete
 5. current accepted scope の next owner / task は `none / none` である
 6. ship goal executable lane は parent `SGM / SGT-M` と child `SGI / SGT` の二層で固定されている
-7. separate future scope `GPC` は implementation lane complete、proof / validation / closeout 未主張である
+7. separate future scope `GPC` の current operational roadmap authority は `20260423-gpc-operational-completion-implementation-roadmap.md` と `20260423-gpc-operational-completion-test-roadmap.md` である
 8. publication design lane は complete である
 9. native distributable に進む場合は別 scope が必要である
