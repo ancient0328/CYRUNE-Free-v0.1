@@ -7,8 +7,8 @@ import textwrap
 from pathlib import Path
 
 REPOSITORY_OWNER = "ancient0328"
-REPOSITORY_NAME = "CYRUNE-Free-v0.1"
-RELEASE_TAG = "v0.1"
+REPOSITORY_NAME = "CYRUNE"
+RELEASE_TAG = "v0.1.0"
 REPOSITORY_FULL_NAME = f"{REPOSITORY_OWNER}/{REPOSITORY_NAME}"
 
 README_BODY = """# CYRUNE Free v0.1
@@ -29,6 +29,13 @@ CYRUNE Free v0.1 is the public single-user Control OS publication unit for the c
 - Tracked public branch surface: `README.md`, `docs/`, `scripts/`, `free/`
 - GitHub-hosted non-tracked carrier: `cyrune-free-v0.1.tar.gz`
 - Docs are auxiliary and do not replace the carrier
+
+## Versioning
+
+- `main` is the latest public repository surface.
+- SemVer tags, such as `v0.1.0`, are immutable snapshots of this public repository content.
+- `v0.1` is treated as a version marker / compatibility tag, not as a branch name.
+- A `v0.1` branch is not used.
 
 ## Not Included
 

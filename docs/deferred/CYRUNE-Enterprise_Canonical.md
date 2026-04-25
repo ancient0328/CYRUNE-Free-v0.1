@@ -1,6 +1,6 @@
 # CYRUNE Enterprise Canonical
 
-**Status**: Canonical（Enterprise）  
+**Status**: Canonical（Enterprise）
 **Scope**: 組織統治 / 共有Ledger / RBAC / SSO / 組織Policy強制
 
 ---
@@ -9,7 +9,7 @@
 
 > Enterprise は、組織単位で推論・実行・証跡を強制統治する層である。
 
-Pro+ は推論の正しさを保証する。  
+Pro+ は推論の正しさを保証する。
 Enterprise は統治の強制を保証する。
 
 ---

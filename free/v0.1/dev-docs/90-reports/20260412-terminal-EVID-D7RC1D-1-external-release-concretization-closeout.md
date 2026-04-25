@@ -1,8 +1,8 @@
 # 20260412 Terminal EVID D7RC1D-1 External Release Concretization Closeout
 
-**対象タスク**: `D7RC1D-I1 / D7RC1D-T1 / D7RC1D-S1 / D7RC1D-S2`  
-**実行日時 (JST)**: `2026-04-12 15:03:48 JST`  
-**分類**: `証跡`  
+**対象タスク**: `D7RC1D-I1 / D7RC1D-T1 / D7RC1D-S1 / D7RC1D-S2`
+**実行日時 (JST)**: `2026-04-12 15:03:48 JST`
+**分類**: `証跡`
 **目的**: `D7-RC1 external release concretization` add-on scope の accepted / fail-closed / validation family を採用し、workspace phase-end validation と current-state sync を伴う final closeout を固定する
 
 ---
@@ -44,12 +44,12 @@
 
 ## 4. 初回 findings と補正
 
-1. **初回 finding**: `D7_RC1_EXACT_TEST_AND_PROOF_MANIFEST_CANONICAL.md` の検証手順が `D7-RC1-C` 採用前の wording のままで、organization-owned family 全体を proof 対象外と読めた  
-   **補正**: concrete organization-owned value を canonical fixed value にしていないことを確認する wording へ補正し、`D7-RC1-D` handoff を追加した  
+1. **初回 finding**: `D7_RC1_EXACT_TEST_AND_PROOF_MANIFEST_CANONICAL.md` の検証手順が `D7-RC1-C` 採用前の wording のままで、organization-owned family 全体を proof 対象外と読めた
+   **補正**: concrete organization-owned value を canonical fixed value にしていないことを確認する wording へ補正し、`D7-RC1-D` handoff を追加した
    **補正後残存**: 無し
 
-2. **初回 finding**: `D7_RC1_ORGANIZATION_OWNED_RELEASE_METADATA_CANONICAL.md` に `accepted / fail-closed artifact family` が非対象として残り、`D7RC1C-T1` 採用後の current truth とずれていた  
-   **補正**: 非対象を concrete value の canonical fixed value 化に限定し、`D7-RC1-D` を未完了欄から外した  
+2. **初回 finding**: `D7_RC1_ORGANIZATION_OWNED_RELEASE_METADATA_CANONICAL.md` に `accepted / fail-closed artifact family` が非対象として残り、`D7RC1C-T1` 採用後の current truth とずれていた
+   **補正**: 非対象を concrete value の canonical fixed value 化に限定し、`D7-RC1-D` を未完了欄から外した
    **補正後残存**: 無し
 
 ## 5. 6 Gate 判定

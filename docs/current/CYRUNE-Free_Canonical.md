@@ -1,8 +1,10 @@
 # CYRUNE Free Canonical
 
-**Status**: Canonical（Free）  
-**Scope**: Single-user Control OS Core  
-**Price**: $0  
+**Status**: Canonical（Free）
+**Scope**: Single-user Control OS Core
+**Price**: $0
+
+**Public Free v0.1 scope note**: この public alpha は Free v0.1 の first-success execution surface を公開する。classification / MAC は CYRUNE の canonical design concept として扱うが、この公開面は enforcement-complete classification lattice / clearance enforcement を主張しない。
 
 ---
 
@@ -10,8 +12,8 @@
 
 > CYRUNE Free は、AI実行前に必ず通過する強制境界層を提供する単一ユーザー向けControl OSである。
 
-Freeは機能削減版ではない。  
-思想と構造の最小完成形である。
+Freeは機能削減版ではない。
+思想と構造の最小単位である。
 
 ---
 
@@ -44,7 +46,7 @@ Freeの中核はControl Planeである。
 1. User input
 2. Context clear
 3. Working再構築
-4. Mandatory classification
+4. Classification boundary（target/design scope; public alpha does not claim enforcement-complete classification / MAC）
 5. Policy pre-check
 6. LLM（またはNo-LLM）実行
 7. Citation validation
@@ -99,7 +101,7 @@ Freeは実装詳細を固定しないが、
 以下の場合は出力を拒否する：
 
 * 出典なき主張
-* 未分類データ
+* 未分類データ（target/design scope; public alpha does not claim executable classification / MAC rejection）
 * Policy違反
 * 未定義Capability使用
 * Working未整合
@@ -211,7 +213,7 @@ Freeは：
 * CI Gateを持たない
 * 組織統治を持たない
 
-Freeは「制御の最小完成形」である。
+Freeは「制御の最小単位」である。
 
 ---
 
@@ -233,4 +235,4 @@ CYRUNE Free は、
 AI能力を高めるための製品ではない。
 
 AI実行を構造的に制御するための
-最小完成形Control OSである。
+最小構造Control OSである。

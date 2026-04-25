@@ -9,7 +9,7 @@
 
 > Pro+ は、異種LLM間で推論を構造的に比較・合議し、推論安定性を保証する層である。
 
-Proは単一LLM内部での構造検査である。  
+Proは単一LLM内部での構造検査である。
 Pro+は複数LLM間の構造比較と合議確定を行う。
 
 ---
@@ -27,7 +27,7 @@ Pro+は複数LLM間の構造比較と合議確定を行う。
 | Model Drift Detection | ✖ | ✔ |
 | Conflict Auto-Block | ✖ | ✔ |
 
-> Proは「検査」  
+> Proは「検査」
 > Pro+は「合議」
 
 ---

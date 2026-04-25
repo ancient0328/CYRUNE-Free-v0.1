@@ -1,8 +1,8 @@
 # 20260411 Terminal D7 Terminal Bundle Productization Proof
 
-**対象タスク**: `D7D-I1 / D7D-I2 / D7D-I3 / D7D-T1 / D7D-T2 / D7D-T3 / D7D-S1 / D7D-S2 / D7D-S3 / D7D-S4`  
-**実行日時 (JST)**: `2026-04-11 23:25:31 JST`  
-**分類**: `証跡`  
+**対象タスク**: `D7D-I1 / D7D-I2 / D7D-I3 / D7D-T1 / D7D-T2 / D7D-T3 / D7D-S1 / D7D-S2 / D7D-S3 / D7D-S4`
+**実行日時 (JST)**: `2026-04-11 23:25:31 JST`
+**分類**: `証跡`
 **目的**: D7 WezTerm bundle productization future executable line の accepted proof family、fail-closed proof family、workspace phase-end validation、reports / index / inventory sync を採用し、current accepted D7 executable line closeout を固定する
 
 ---
@@ -36,12 +36,12 @@
 
 ## 4. 初回 findings と補正
 
-1. **初回 finding**: D7 final closeout 用の accepted / fail-closed family は task-level report まで揃っていたが、D7-C proof driver artifact family を採用 source として index / inventory に同期していなかった  
-   **補正**: `D7C-I3 / D7C-T4` 完了後の report を追加し、root index と inventory に同期した  
+1. **初回 finding**: D7 final closeout 用の accepted / fail-closed family は task-level report まで揃っていたが、D7-C proof driver artifact family を採用 source として index / inventory に同期していなかった
+   **補正**: `D7C-I3 / D7C-T4` 完了後の report を追加し、root index と inventory に同期した
    **補正後残存**: 無し
 
-2. **初回 finding**: D7 final closeout 前の current inventory は `D7-D / D7D-I1` を active としており、D7 complete claim まで同期していなかった  
-   **補正**: D7 final proof report と同一 batch で roadmap / reports / index / inventory を更新し、current active phase / task と current accepted next executable scope を `none` に同期した  
+2. **初回 finding**: D7 final closeout 前の current inventory は `D7-D / D7D-I1` を active としており、D7 complete claim まで同期していなかった
+   **補正**: D7 final proof report と同一 batch で roadmap / reports / index / inventory を更新し、current active phase / task と current accepted next executable scope を `none` に同期した
    **補正後残存**: 無し
 
 ## 5. 6 Gate 判定

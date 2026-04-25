@@ -1,8 +1,8 @@
 # 製品ポジショニング図（CRANE / CYRUNE / CITADEL 関係図）
 
-**状態（当時）**: Historical product positioning and whitepaper sketch  
-**現在の権威状態**: Historical / non-authoritative  
-**取り扱い**: 2026-04-12 JST の `PB-C / PBC-I1 authority-state segregation` 後、この文書は current accepted source ではない。CRANE / CYRUNE / CITADEL 関係図と whitepaper 構成案の初期整理として参照に限定する。現行 authority は `docs/CYRUNE_ProductTierCanonical.md`、`docs/CITADEL.md`、`docs/CITADEL_ThreatModel.md`、`free/v0.1/dev-docs/summary/01-SYSTEM_AND_SCOPE.md` である。  
+**状態（当時）**: Historical product positioning and whitepaper sketch
+**現在の権威状態**: Historical / non-authoritative
+**取り扱い**: 2026-04-12 JST の `PB-C / PBC-I1 authority-state segregation` 後、この文書は current accepted source ではない。CRANE / CYRUNE / CITADEL 関係図と whitepaper 構成案の初期整理として参照に限定する。現行 authority は `docs/deferred/CYRUNE_ProductTierCanonical.md`、`docs/deferred/CITADEL.md`、`docs/deferred/CITADEL_ThreatModel.md`、`free/v0.1/dev-docs/summary/01-SYSTEM_AND_SCOPE.md` である。
 
 ```
                         ┌──────────────────────────────┐

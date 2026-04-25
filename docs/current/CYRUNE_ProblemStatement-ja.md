@@ -1,5 +1,7 @@
 # Problem Statement（Technical Edition）
 
+**Public Free v0.1 scope note**: この文書は構造的問題と CYRUNE の target model を説明する。public alpha が enforcement-complete classification / MAC、OS-level sandbox isolation、Pro / Enterprise / CITADEL scope、native distribution を実装済みであるとは主張しない。
+
 ## AI 実行前に「強制境界層」が存在しないことが問題である
 
 ---
@@ -56,7 +58,7 @@ User → Retrieval → LLM → Tool Calls → Filesystem / Network
 
 ここには
 
-* Mandatory classification enforcement
+* Classification boundary governance
 * Citation binding
 * Capability gating
 * Immutable audit logging
@@ -90,7 +92,7 @@ Working Memory が無制限の場合：
 > 文脈の容量と寿命を物理的に制限する必要がある。
 
 三層メモリ（Working 10±2 / Processing 42日 / Permanent）は
-キャッシュ最適化ではなく、**責務分離による文脈固定**の設計です。 
+キャッシュ最適化ではなく、**責務分離による文脈固定**の設計です。
 
 ---
 
@@ -200,7 +202,7 @@ policy_pack によって allow 明示
 
 という**役割分離**で推論を分解する。
 
-そして推論差分アルゴリズム（D1〜D5）で構造差分を検出する。 
+そして推論差分アルゴリズム（D1〜D5）で構造差分を検出する。
 
 これは「賢さの強化」ではない。
 
@@ -254,4 +256,4 @@ Control Plane (mandatory boundary)
 LLM
 ```
 
-という構造を強制します。 
+という構造を強制します。

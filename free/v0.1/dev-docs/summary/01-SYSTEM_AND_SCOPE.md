@@ -6,8 +6,8 @@
 
 ## 1. 製品の定義
 
-CYRUNE Free v0.1 は、CRANE-Kernel 上に成立する**単一ユーザー向け mandatory boundary distribution**である。  
-単なる CLI でも、単なる terminal skin でも、単なる LLM app でもない。  
+CYRUNE Free v0.1 は、CRANE-Kernel 上に成立する**単一ユーザー向け mandatory boundary distribution**である。
+単なる CLI でも、単なる terminal skin でも、単なる LLM app でもない。
 本体は Control Plane であり、ユーザー入力、Working 再構築、Policy、Execution、Citation、Ledger を turn 単位で強制する。
 
 ## 2. Mission
@@ -16,8 +16,8 @@ CYRUNE Free v0.1 の mission は、次の一文で表せる。
 
 **CRANE-Kernel 上に、1 ターンごとに context clear、Working 10±2、citation-bound、fail-closed、atomic ledger を強制する単一ユーザー向け Control OS を成立させる。**
 
-この mission は Free v0.1 の製品核であり、`minimum completion gate` の中心である。  
-ただし v0.1 の ship goal は、これを満たしたうえで、第三者が obtain / launch / first success まで進め、public corpus だけで製品の主語と current public truth を理解できる release-grade product を成立させることまで含む。  
+この mission は Free v0.1 の製品核であり、`minimum completion gate` の中心である。
+ただし v0.1 の ship goal は、これを満たしたうえで、第三者が obtain / launch / first success まで進め、public corpus だけで製品の主語と current public truth を理解できる release-grade product を成立させることまで含む。
 したがって current accepted scope complete は ship goal complete を意味しない。
 
 ## 3. Free v0.1 が握るもの
@@ -51,23 +51,23 @@ Free v0.1 が握らない責務は次である。
 
 ### 5.1 Control Plane
 
-1 ターンの accept / reject を最終決定する層である。  
+1 ターンの accept / reject を最終決定する層である。
 request 検証、binding 解決、Working rebuild、Gate、Execution、Citation validate、Ledger commit、Working 反映を握る。
 
 ### 5.2 Kernel adapter
 
-CRANE-Kernel 契約を実装する差し替え可能な adapter 群である。  
-ストレージ、インデックス、埋め込みの実体を担う。  
+CRANE-Kernel 契約を実装する差し替え可能な adapter 群である。
+ストレージ、インデックス、埋め込みの実体を担う。
 Free 独自の意味論は持たない。
 
 ### 5.3 Execution adapter
 
-Control Plane に許可されたときだけ呼ばれる実行差分である。  
+Control Plane に許可されたときだけ呼ばれる実行差分である。
 No-LLM path と approved execution adapter path が current accepted scope である。
 
 ### 5.4 Working projection
 
-`working.json` に現れる、そのターンで判断に使ってよい小さな作業集合である。  
+`working.json` に現れる、そのターンで判断に使ってよい小さな作業集合である。
 三層メモリの source of truth ではなく、Control Plane が確定した投影である。
 
 ## 6. In Scope
@@ -123,7 +123,7 @@ Free v0.1 を「成立」と呼ぶ条件は、現在の accepted scope 上では
 
 ## 10. 価値の中心
 
-CYRUNE Free v0.1 の価値の中心は Control Plane である。  
+CYRUNE Free v0.1 の価値の中心は Control Plane である。
 価値は次の性質の組み合わせにある。
 
 1. turn ごとの context clear
@@ -138,17 +138,17 @@ CYRUNE Free v0.1 の価値の中心は Control Plane である。
 
 ### 11.1 corrective line
 
-fixed problem 6 項目を、code / proof / inventory / gate / final closeout の範囲で解消した。  
+fixed problem 6 項目を、code / proof / inventory / gate / final closeout の範囲で解消した。
 これにより `blocker none`、`shipping memory line fully complete`、`baseline fully closed` が current accepted claim として再許可された。
 
 ### 11.2 D6
 
-native outer launcher を outer front として追加した。  
+native outer launcher を outer front として追加した。
 ただし `cyr` 単一入口、`BUNDLE_ROOT` authority、`CYRUNE_HOME` non-authority projection、launcher / preflight / run-path split を崩していない。
 
 ### 11.3 D7
 
-terminal bundle productization を追加した。  
+terminal bundle productization を追加した。
 ただし D7 は runtime semantics を変えず、bundle identity、notice、integrity、upstream intake judgment、productization failure family だけを own している。
 
 ## 12. 現時点の製品状態

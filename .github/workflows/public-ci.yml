@@ -1,0 +1,26 @@
+name: public-ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  public-envelope:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check public shell scripts parse
+        run: |
+          bash -n scripts/prepare-public-run.sh
+          bash -n scripts/doctor.sh
+          bash -n scripts/first-success.sh
+
+      - name: Check Rust formatting
+        run: cargo fmt --manifest-path free/v0.1/0/Cargo.toml --all -- --check
+
+      - name: Check Rust workspace
+        run: cargo check --manifest-path free/v0.1/0/Cargo.toml --workspace --all-targets
+
+      - name: Check Rust lint
+        run: cargo clippy --manifest-path free/v0.1/0/Cargo.toml --workspace --all-targets -- -D warnings

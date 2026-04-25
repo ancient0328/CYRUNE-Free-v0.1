@@ -1,8 +1,8 @@
 # CYRUNE Free v0.1 Structure Pack
 
-**状態（当時）**: Historical explanatory structure pack  
-**現在の権威状態**: Historical / non-authoritative  
-**取り扱い**: 2026-04-12 JST の `PB-C / PBC-I1 authority-state segregation` 後、この文書は current accepted source ではない。Free v0.1 の初期構造整理として参照に限定する。現行 authority は `docs/CYRUNE-Free_Canonical.md`、`free/v0.1/dev-docs/03-architecture/ARCHITECTURE_OVERVIEW.md`、`free/v0.1/dev-docs/summary/02-ARCHITECTURE_AND_RUNTIME_LINES.md` である。  
+**状態（当時）**: Historical explanatory structure pack
+**現在の権威状態**: Historical / non-authoritative
+**取り扱い**: 2026-04-12 JST の `PB-C / PBC-I1 authority-state segregation` 後、この文書は current accepted source ではない。Free v0.1 の初期構造整理として参照に限定する。現行 authority は `docs/current/CYRUNE-Free_Canonical.md`、`free/v0.1/dev-docs/03-architecture/ARCHITECTURE_OVERVIEW.md`、`free/v0.1/dev-docs/summary/02-ARCHITECTURE_AND_RUNTIME_LINES.md` である。
 
 ## 1. Logical Architecture
 

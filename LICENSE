@@ -1,0 +1,12 @@
+SPDX-License-Identifier: MIT OR Apache-2.0
+
+CYRUNE Free v0.1 is licensed under either the MIT License or the Apache
+License, Version 2.0, at your option.
+
+See:
+
+- `LICENSE-MIT`
+- `LICENSE-APACHE`
+
+The first-party Rust workspace declares the same license expression:
+`MIT OR Apache-2.0`.

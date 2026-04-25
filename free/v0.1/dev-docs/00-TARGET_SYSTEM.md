@@ -30,7 +30,7 @@ CYRUNE Free v0.1 は、CRANE-Kernel 上に載る**単一ユーザー向け manda
 
 **CRANE-Kernel 上に、1ターンごとに context clear、Working 10±2、citation-bound、fail-closed、atomic ledger を強制する単一ユーザー向け Control OS を成立させる。**
 
-この一文は Free v0.1 の製品核であり、`minimum completion gate` の中心を表す。  
+この一文は Free v0.1 の製品核であり、`minimum completion gate` の中心を表す。
 ただし Free v0.1 の最終ゴールはこの一文だけでは閉じず、ship goal まで含めて読む。
 
 ---
@@ -39,12 +39,12 @@ CYRUNE Free v0.1 は、CRANE-Kernel 上に載る**単一ユーザー向け manda
 
 ### 2.1 minimum completion gate
 
-`minimum completion gate` は、Free v0.1 を「最初に成立」と呼ぶための前提条件である。  
+`minimum completion gate` は、Free v0.1 を「最初に成立」と呼ぶための前提条件である。
 `02-decisions/20260314-cyrune-free-v0_1-minimum-completion-definition.md` がこの gate の単一ソースであり、current accepted scope の complete claim はこの gate を含む。
 
 ### 2.2 ship goal
 
-Free v0.1 の ship goal は、`minimum completion gate` を満たした製品核を、第三者が取得・起動・理解できる release-grade product として成立させることである。  
+Free v0.1 の ship goal は、`minimum completion gate` を満たした製品核を、第三者が取得・起動・理解できる release-grade product として成立させることである。
 少なくとも、次を含む。
 
 1. public entry から正しい取得先に辿れること
@@ -56,8 +56,8 @@ Free v0.1 の ship goal は、`minimum completion gate` を満たした製品核
 
 ### 2.3 現時点の読み方
 
-current accepted scope の complete は、`minimum completion gate` と current accepted line / add-on scope / logical publication design lane の closeout を意味する。  
-これは ship goal complete を意味しない。  
+current accepted scope の complete は、`minimum completion gate` と current accepted line / add-on scope / logical publication design lane の closeout を意味する。
+これは ship goal complete を意味しない。
 ship goal 側の差分は、新しい fixed problem / roadmap scope として切り出して解く。
 
 ---

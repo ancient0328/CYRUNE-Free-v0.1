@@ -28,12 +28,13 @@ except ImportError:  # pragma: no cover - environment-dependent fallback
 
 
 REPOSITORY_OWNER = "ancient0328"
-REPOSITORY_NAME = "CYRUNE-Free-v0.1"
+REPOSITORY_NAME = "CYRUNE"
 REPOSITORY_FULL_NAME = f"{REPOSITORY_OWNER}/{REPOSITORY_NAME}"
 BRANCH_NAME = "main"
 BRANCH_REF = f"refs/heads/{BRANCH_NAME}"
-RELEASE_TAG = "v0.1"
-RELEASE_TITLE = "CYRUNE Free v0.1"
+RELEASE_TAG = "v0.1.0"
+COMPATIBILITY_RELEASE_TAGS = {"v0.1"}
+RELEASE_TITLE = "CYRUNE Free v0.1 public alpha"
 RELEASE_BODY = ""
 ASSET_FILENAME = "cyrune-free-v0.1.tar.gz"
 RELEASE_LANDING_PAGE = (
@@ -451,18 +452,25 @@ def assert_allowed_release_and_tag_sets(
     releases: list[dict[str, Any]],
     tags: list[dict[str, Any]],
 ) -> None:
-    if len(releases) > 1:
-        raise fail("pre-existing release set must contain at most one release")
-    if len(tags) > 1:
-        raise fail("pre-existing tag set must contain at most one tag")
+    allowed_tags = {RELEASE_TAG, *COMPATIBILITY_RELEASE_TAGS}
+    seen_releases: set[str] = set()
+    seen_tags: set[str] = set()
 
     for release in releases:
-        if release.get("tag_name") != RELEASE_TAG:
+        release_tag = release.get("tag_name")
+        if release_tag not in allowed_tags:
             raise fail(f"unexpected pre-existing release tag: {release.get('tag_name')}")
+        if release_tag in seen_releases:
+            raise fail(f"duplicate pre-existing release tag: {release_tag}")
+        seen_releases.add(release_tag)
 
     for tag in tags:
-        if tag.get("name") != RELEASE_TAG:
+        tag_name = tag.get("name")
+        if tag_name not in allowed_tags:
             raise fail(f"unexpected pre-existing tag: {tag.get('name')}")
+        if tag_name in seen_tags:
+            raise fail(f"duplicate pre-existing tag: {tag_name}")
+        seen_tags.add(tag_name)
 
 
 def assert_allowed_preexisting_tracked_surface(

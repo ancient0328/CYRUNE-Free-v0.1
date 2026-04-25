@@ -6,7 +6,7 @@
 
 ## 1. この巻の目的
 
-この巻は、CYRUNE Free v0.1 を構成する contract と data model を、実装に依存しすぎずに本文で固定する。  
+この巻は、CYRUNE Free v0.1 を構成する contract と data model を、実装に依存しすぎずに本文で固定する。
 ここを読めば、何が必須で、何が禁止で、何が fail-closed 条件かを把握できる。
 
 ## 2. identity family
@@ -17,22 +17,22 @@ Runtime が受け取った 1 回の要求を識別する。
 
 ### 2.2 correlation_id
 
-1 turn を end-to-end で追跡するための相関 ID である。  
+1 turn を end-to-end で追跡するための相関 ID である。
 request、run、ledger、metrics、working update を同じ turn に結びつける。
 
 ### 2.3 run_id
 
-実行単位の ID である。  
+実行単位の ID である。
 Free v0.1 は `single_run` topology を採るため、1 correlation_id に対して `<correlation_id>-R01` だけを許す。
 
 ### 2.4 evidence_id
 
-ledger 上の証跡単位を識別する。  
+ledger 上の証跡単位を識別する。
 `EVID-<u64>` 形式を採る。
 
 ### 2.5 denial_id
 
-rejected run に付く deny event の識別子である。  
+rejected run に付く deny event の識別子である。
 `DENY-<u64>` 形式を許す。
 
 ## 3. memory semantics
@@ -168,13 +168,13 @@ claim entry は少なくとも次を持つ。
 2. `extractive`
 3. `derived`
 
-`derived` は citation scope 内でのみ許可される。  
+`derived` は citation scope 内でのみ許可される。
 bundle 外の claim を accepted output に出してはならない。
 
 ## 7. simplified reasoning record
 
-Free v0.1 では reasoning record を削除しない。  
-ただし Pro 相当の diff / consensus / role graph までは要求しない。  
+Free v0.1 では reasoning record を削除しない。
+ただし Pro 相当の diff / consensus / role graph までは要求しない。
 最小 reasoning record は次を含む。
 
 1. `claims`
@@ -245,7 +245,7 @@ Evidence commit の順序は次である。
 4. `.tmp` から本番名へ rename する
 5. `index.jsonl` に append する
 
-index は走査補助であり、本体ではない。  
+index は走査補助であり、本体ではない。
 index だけを source of truth としてはならない。
 
 ## 10. turn flow rules
@@ -304,17 +304,17 @@ packaged mode の static authority は `BUNDLE_ROOT` のみである。
 
 ### 12.2 home rule
 
-`CYRUNE_HOME` は mutable state root である。  
+`CYRUNE_HOME` は mutable state root である。
 generated file や materialized projection を持てるが authority ではない。
 
 ### 12.3 exact pin rule
 
-shipping exact pin manifest と artifact set は bundle-root authoritative である。  
+shipping exact pin manifest と artifact set は bundle-root authoritative である。
 home 側 `embedding/**` は byte-identical materialized projection にすぎない。
 
 ## 13. D6 contract
 
-D6 は native outer launcher line である。  
+D6 は native outer launcher line である。
 許される主語は outer launch integration のみである。
 
 必須制約:
@@ -328,7 +328,7 @@ D6 は native outer launcher line である。
 
 ## 14. D7 contract
 
-D7 は terminal bundle productization line である。  
+D7 は terminal bundle productization line である。
 許される主語は次に限定される。
 
 1. bundle identity
@@ -401,5 +401,5 @@ current accepted claim に採用していないのは次である。
 
 これらは未固定だが、current blocker ではない。
 
-ただし post-v0.1 add-on scope `D7-RC1` は既に complete であり、rule-fixed family、organization-owned contract、organization-owned variable family の exact reason / publicization boundary、accepted / fail-closed artifact family、final closeout adoption までは採用済みである。  
+ただし post-v0.1 add-on scope `D7-RC1` は既に complete であり、rule-fixed family、organization-owned contract、organization-owned variable family の exact reason / publicization boundary、accepted / fail-closed artifact family、final closeout adoption までは採用済みである。
 現時点で fixed 済みなのは concrete value ではなく、organization owner が supply し、top-level `RELEASE_PREPARATION.json.signing_identity` と `RELEASE_PREPARATION.json.notarization_provider` を input location とし、missing / invalid を `signing_identity_invalid` / `notarization_provider_invalid` reason と fixed message に畳み込み、field-level invalidity を `release_preparation_metadata_invalid` に丸めず、`release_preparation_failure` family に閉じるという contract と、その accepted / fail-closed artifact family、および final closeout adoption family である。

@@ -8,9 +8,9 @@
 **基本方針**: *Diffは“文章”ではなく“推論構造”に対して取る。*
 
 ---
-> Free は簡易 RR を保存する。  
-> Pro は RR を入力として推論差分（D1〜D5）を生成する層であり、  
-> 本章で定義する RR schema は Pro の diff / single-LLM multi-agent に接続する厳密 schema である。  
+> Free は簡易 RR を保存する。
+> Pro は RR を入力として推論差分（D1〜D5）を生成する層であり、
+> 本章で定義する RR schema は Pro の diff / single-LLM multi-agent に接続する厳密 schema である。
 > Free に Diff・multi-agent は要求しない。
 
 ## 1.1 入力（Inputs）
@@ -33,7 +33,7 @@
 
 LLMの「内部思考」を要求しない。代わりに、CYRUNEが **出力を構造化して確定**する。
 
-Free では簡易 RR を保存する。  
+Free では簡易 RR を保存する。
 Pro では、本章の RR schema を推論差分と single-LLM multi-agent の基底として使う。
 
 RRは以下の閉集合ブロックから成る：

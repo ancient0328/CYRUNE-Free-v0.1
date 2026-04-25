@@ -1,9 +1,9 @@
 # ADR: CYRUNE Terminal を WezTerm ベースで統合（再商品化）する
 
-**日付 (JST)**: 2026-03-01  
-**状態（当時）**: 提案（Proposed）  
-**現在の権威状態**: Historical / non-authoritative  
-**取り扱い**: 2026-04-11 JST の D7 closeout 後、この文書は current accepted source ではない。初期 ADR と判断背景の参照にのみ使う。現行 authority は `free/v0.1/dev-docs/04-implementation-notes/TERMINAL_BUNDLE_PRODUCTIZATION_CANONICAL.md`、`free/v0.1/dev-docs/01-roadmap/20260411-d7-terminal-bundle-productization-executable-roadmap.md`、`free/v0.1/dev-docs/90-reports/20260411-terminal-D7-terminal-bundle-productization-proof.md` である。  
+**日付 (JST)**: 2026-03-01
+**状態（当時）**: 提案（Proposed）
+**現在の権威状態**: Historical / non-authoritative
+**取り扱い**: 2026-04-11 JST の D7 closeout 後、この文書は current accepted source ではない。初期 ADR と判断背景の参照にのみ使う。現行 authority は `free/v0.1/dev-docs/04-implementation-notes/TERMINAL_BUNDLE_PRODUCTIZATION_CANONICAL.md`、`free/v0.1/dev-docs/01-roadmap/20260411-d7-terminal-bundle-productization-executable-roadmap.md`、`free/v0.1/dev-docs/90-reports/20260411-terminal-D7-terminal-bundle-productization-proof.md` である。
 **決定ID**: ADR-CTERM-0001
 
 ---
@@ -12,7 +12,7 @@
 
 CYRUNE は、端末エミュレータを自作せず **WezTerm をベースに「CYRUNE Terminal」として再商品化（rebrand + repackage）**する。
 
-ただし WezTerm の「端末として完成された機能・責務」を汚さないため、WezTerm 側に CYRUNE の統制ロジック（policy / sandbox / ledger / working）を埋め込まない。  
+ただし WezTerm の「端末として完成された機能・責務」を汚さないため、WezTerm 側に CYRUNE の統制ロジック（policy / sandbox / ledger / working）を埋め込まない。
 CYRUNE 固有機能は **別プロセス（cyrune-runner / cyrune-daemon）** に集約し、CYRUNE Terminal は
 
 - CYRUNE としての製品外観（名前/署名/設定/配布）を提供し
@@ -100,7 +100,7 @@ CYRUNE Terminal起動時、既定で以下を立ち上げる（最小案）。
 - Pane B: `cyr view evidence`（ledger viewer / 実行履歴）
 - Pane C: `cyr view working`（Working 10±2 viewer）
 
-> UI統合は “同一アプリ内で複数pane” によって達成する。  
+> UI統合は “同一アプリ内で複数pane” によって達成する。
 > WezTerm自体に新UIを埋め込まず、CYRUNE側のviewerを起動するだけで成立させる。
 
 ### 4. 実行の単一入口（bypass潰し）

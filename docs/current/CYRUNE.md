@@ -2,8 +2,8 @@
 
 ## 0. Public Entry
 
-For the current accepted public corpus of CYRUNE Free v0.1, start with `CYRUNE_Free_Public_Index.md`.  
-This page is a product overview of CYRUNE as a whole, not the only authority entry for the current Free v0.1 public corpus.
+For the current accepted public corpus of CYRUNE Free v0.1, start with `../CYRUNE_Free_Public_Index.md`.
+This page is a product overview of CYRUNE as a whole. It is not a claim that this Free v0.1 public alpha implements every CYRUNE or CITADEL enforcement layer.
 
 ## 1. What is CYRUNE?
 
@@ -15,7 +15,7 @@ CYRUNE is not a chatbot.
 It is not a generative AI wrapper.
 It is not a cloud service.
 
-CYRUNE is a **knowledge control operating system** that enforces structure, classification, citation-bound reasoning, and auditability over intelligent systems.
+CYRUNE is a **knowledge control operating system** that defines structure, classification governance, citation-bound reasoning, and auditability over intelligent systems.
 
 Where CITADEL represents the hardened defense distribution,
 CYRUNE represents the general-purpose control OS for high-trust environments.
@@ -27,7 +27,7 @@ CYRUNE represents the general-purpose control OS for high-trust environments.
 CYRUNE is designed around five principles:
 
 1. **Controlled memory**
-2. **Mandatory classification**
+2. **Classification governance**
 3. **Citation-bound reasoning**
 4. **Fail-closed governance**
 5. **Detachable intelligence**
@@ -63,13 +63,13 @@ CYRUNE uses the same three-layer model as CRANE:
 
 * Limited to 10±2 structured state elements
 * Represents current operational state
-* Classification-bound
+* Classification-aware
 * Explicitly updated (semi-automatic)
 
 ### Processing Memory
 
 * Holds logs, drafts, retrieved materials
-* Must be classified
+* Designed to carry classification metadata
 * May be promoted
 
 ### Permanent Memory
@@ -78,20 +78,20 @@ CYRUNE uses the same three-layer model as CRANE:
 * Promotion requires authorization
 * Immutable once approved
 
-All objects require classification labels:
+The CYRUNE design uses classification labels:
 
 * PUBLIC
 * INTERNAL
 * RESTRICTED
 * SECRET
 
-Unclassified data is rejected.
+In this Free v0.1 public alpha, classification / MAC is a product intent and claim boundary. This public source surface does not claim an enforcement-complete classification lattice or clearance governance.
 
 ---
 
 ## 5. Classification and Control
 
-CYRUNE enforces Mandatory Access Control (MAC):
+CYRUNE's target control model is Mandatory Access Control (MAC):
 
 ```
 clearance >= classification_label
@@ -103,7 +103,7 @@ Output classification is determined by:
 max(input, retrieved, working)
 ```
 
-This prevents classification leakage across domains.
+The purpose is to prevent classification leakage across domains.
 
 Policy Packs define domain-specific extensions (e.g., PHI in medical, financial retention rules).
 

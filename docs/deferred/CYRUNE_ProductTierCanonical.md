@@ -16,7 +16,7 @@ CYRUNE Free
 CYRUNE Pro
         ↓
 CYRUNE Pro+
-        ↓        
+        ↓
 CYRUNE Enterprise
         ↓
 CITADEL
@@ -132,7 +132,7 @@ CITADEL
 
 > Single-user Control OS（完全体）
 
-思想の武器。  
+思想の武器。
 機能削減版ではない。
 
 ---
@@ -173,9 +173,9 @@ CITADEL
 * WezTermベースTerminal統合
 * Cross-platform
 
-  * macOS: strong enforcement  
-  * Linux (Debian/RHEL系): strong enforcement  
-  * Windows: scoped-to-cyrune enforcement  
+  * macOS: strong enforcement
+  * Linux (Debian/RHEL系): strong enforcement
+  * Windows: scoped-to-cyrune enforcement
 
 ### 配布
 
@@ -274,7 +274,7 @@ Freeの本質を拡張する。
 
 > 異種LLM合議・推論安定性保証層
 
-Proは単一LLM内で推論を検査する。  
+Proは単一LLM内で推論を検査する。
 Pro+は複数LLM間で推論を比較・合議し、推論安定性を保証する。
 
 ---
@@ -340,7 +340,7 @@ CM-D1〜CM-D5：
 
 > 組織統治強制層
 
-Pro+は推論の正しさを保証する。  
+Pro+は推論の正しさを保証する。
 Enterpriseは統治の強制を保証する。
 
 ---
@@ -363,8 +363,8 @@ Enterpriseは統治の強制を保証する。
 
 ## 価格
 
-**$99 / user / month**  
-または  
+**$99 / user / month**
+または
 **$30,000+ / year（組織契約）**
 
 ---
@@ -420,9 +420,9 @@ Enterpriseの強化版。
 
 # 9. 戦略的原則
 
-1. Freeは削らない  
-2. Proは検査を売る  
-3. Pro+は合議と安定性を売る  
-4. Enterpriseは統治を売る  
-5. CITADELは強度を売る  
-6. 本質（制御）は常にFreeに含める  
+1. Freeは削らない
+2. Proは検査を売る
+3. Pro+は合議と安定性を売る
+4. Enterpriseは統治を売る
+5. CITADELは強度を売る
+6. 本質（制御）は常にFreeに含める

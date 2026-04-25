@@ -1,5 +1,7 @@
 # Problem Statement
 
+**Public Free v0.1 scope note**: This problem statement describes the structural problem and CYRUNE target model. It is not a claim that this public alpha implements enforcement-complete classification / MAC, OS-level sandbox isolation, Pro / Enterprise / CITADEL scope, or native distribution.
+
 ## Why Knowledge Control OS Is Necessary
 
 ---
@@ -109,7 +111,7 @@ What is missing is an operating system.
 
 A layer that:
 
-* Enforces classification
+* Defines classification boundaries
 * Binds reasoning to citations
 * Limits context deterministically
 * Rejects ungrounded claims
