@@ -169,6 +169,8 @@ Unlike SaaS systems, CYRUNE is designed for environments where external communic
 * Signed update packages
 * Version recorded in Ledger
 
+For this Free v0.1 public alpha, the signed update model is a product-wide design direction, not a shipped updater or signed update channel. This repository does not include signing / notarization workflow, concrete signing values, or signed update package delivery.
+
 ---
 
 ## 10. CLI as Canonical Interface

@@ -13,6 +13,12 @@ This repository is a public-facing Free v0.1 publication unit. It is not a nativ
 - This repository does not use a `v0.1` branch. A maintenance branch, if ever needed, should use a non-conflicting name such as `release/v0.1`.
 - Version tags do not expand the public alpha claim boundary described below.
 
+## Language
+
+English is the primary language for the public GitHub repository entry path.
+Japanese documents are companion material where they are maintained explicitly, such as `docs/current/CYRUNE_ProblemStatement-ja.md`, `docs/USER_GUIDE-ja.md`, and `docs/ENGINEERING_SPEC-ja.md`.
+Companion translations do not create a separate authority surface; the public index defines the reading order.
+
 ## Start Here
 
 1. [Getting Started](docs/GETTING_STARTED.md)
@@ -33,6 +39,7 @@ This repository is a public-facing Free v0.1 publication unit. It is not a nativ
 - Sandbox scope: this alpha documents and uses sandbox specification normalization / validation. It does not claim OS-level process isolation.
 - Classification / MAC scope: CYRUNE product docs describe the intended classification and MAC model. This Free v0.1 public alpha does not claim enforcement-complete classification lattice or clearance governance.
 - Evidence scope: first-success creates local runtime evidence for the no-LLM path. It does not prove native distribution, signing, notarization, Pro features, Enterprise governance, or CITADEL hardening.
+- Signed update scope: product-wide docs may describe signed update or no-self-update discipline as a design direction. This Free v0.1 public alpha does not ship a signed updater or signed update channel.
 
 ## Repository Contents
 
@@ -46,6 +53,7 @@ This repository is a public-facing Free v0.1 publication unit. It is not a nativ
 - Native distributable release
 - Installer packaging
 - Concrete signing / notarization values
+- Signed update package delivery
 - OS-level sandbox enforcement
 - Enforcement-complete classification / MAC lattice
 - Pro / Pro+ / Enterprise / CITADEL feature surface

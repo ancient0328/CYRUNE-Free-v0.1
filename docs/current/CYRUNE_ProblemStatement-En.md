@@ -2,6 +2,8 @@
 
 **Public Free v0.1 scope note**: This problem statement describes the structural problem and CYRUNE target model. It is not a claim that this public alpha implements enforcement-complete classification / MAC, OS-level sandbox isolation, Pro / Enterprise / CITADEL scope, or native distribution.
 
+**Language note**: This English file is the primary public problem statement. `CYRUNE_ProblemStatement-ja.md` is the Japanese companion for the same structural framing.
+
 ## Why Knowledge Control OS Is Necessary
 
 ---

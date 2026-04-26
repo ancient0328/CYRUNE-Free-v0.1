@@ -4,6 +4,12 @@
 **分類**: `現行正典`
 **時間相**: `現在との差分を比較する段階`
 
+## 0. Public Repository Reading Caveat
+
+This summary corpus is supplementary in the public GitHub repository. It preserves source-side development history and may mention older publication branch wording, source-side paths, prior release tags, closeout language, or internal roadmap names.
+
+For the public repository envelope, the current publication model is: `main` is the latest public surface; `v0.1.0` is the immutable public alpha snapshot tag / release; existing `v0.1` is a compatibility tag, not a branch; the GitHub repository root is the public package root. This caveat overrides stale publication-path wording inside this supplementary summary corpus.
+
 ## 1. この corpus の役割
 
 この `summary/` corpus は、CYRUNE Free v0.1 の**現在成立している内容**を、第三者がゼロから理解できるようにまとめた standalone 説明書である。

@@ -4,6 +4,12 @@
 **分類**: `現行正典`
 **時間相**: `現在との差分を比較する段階`
 
+## 0. Public Repository Reading Caveat
+
+This operational guide is supplementary in the public GitHub repository. It preserves source-side operational language and older publication topology wording.
+
+For the public repository envelope, the current reader-facing model is: `main` is the latest public surface; `v0.1.0` is the immutable public alpha snapshot tag / release; existing `v0.1` is a compatibility tag, not a branch; the GitHub repository root is the public package root. Treat older references to a GitHub publication branch or source-side publication root as development-history context unless the public index adopts them.
+
 ## 1. current accepted state / ship-goal-side future scope
 
 現在の accepted state は次である。

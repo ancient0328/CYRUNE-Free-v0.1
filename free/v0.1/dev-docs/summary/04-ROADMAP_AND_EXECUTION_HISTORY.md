@@ -4,6 +4,12 @@
 **分類**: `現行正典`
 **時間相**: `現在との差分を比較する段階`
 
+## 0. Public Repository Reading Caveat
+
+This execution history is supplementary in the public GitHub repository. It keeps historical source-side publication wording for traceability.
+
+For the public repository envelope, use the current model fixed by `docs/CYRUNE_Free_Public_Index.md`: `main` is the latest public surface; `v0.1.0` is the immutable public alpha snapshot tag / release; existing `v0.1` is a compatibility tag, not a branch; source-side paths such as `Distro/CYRUNE/public/free-v0.1/` are provenance paths, not public-user paths.
+
 ## 1. この巻の役割
 
 この巻は、現在成立している execution line を整理し、それぞれが何を固定したかを説明する。
