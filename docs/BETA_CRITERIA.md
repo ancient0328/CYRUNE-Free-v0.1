@@ -21,10 +21,11 @@ CYRUNE Free v0.1 public beta is not a label-only wording change. It is a release
 - `v0.1.0` remains the immutable public alpha snapshot.
 - `v0.1.1-beta.1` is the first public beta release-contract line.
 - A beta tag must not be moved after publication. If a beta release is withdrawn or superseded, the next attempt must use a new tag such as `v0.1.1-beta.2`.
+- The Closed Gate Report is post-release closeout evidence on `main`. It is required for public beta closeout, but it is not required to be inside the immutable release tag snapshot because the report depends on release and CI evidence created after the tag exists.
 
 ## 2. Required Beta Evidence
 
-A public beta claim requires all of the following evidence to exist for the same beta candidate:
+A public beta claim requires all of the following evidence to exist for the same beta release line:
 
 1. source commit SHA for the beta candidate,
 2. `v0.1.1-beta.1` tag pointing at that commit,

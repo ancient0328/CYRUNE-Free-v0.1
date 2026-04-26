@@ -1,11 +1,12 @@
 # 20260426-public-EVID-BETA-1-release-contract-beta
 
-**Report type**: Closed Gate Report  
-**Subject**: CYRUNE Free v0.1 public beta release contract  
-**Public surface**: `Distro/CYRUNE/public/free-v0.1/` / GitHub `ancient0328/CYRUNE`  
-**Beta tag**: `v0.1.1-beta.1`  
-**Beta release commit**: `61eb4c68630600d9b1a7f325fd6d06759ede846c`  
-**Created at**: 2026-04-26T12:19:13+0900 JST  
+**Report type**: Closed Gate Report
+**Subject**: CYRUNE Free v0.1 public beta release contract
+**Public surface**: `Distro/CYRUNE/public/free-v0.1/` / GitHub `ancient0328/CYRUNE`
+**Beta tag**: `v0.1.1-beta.1`
+**Beta release commit**: `61eb4c68630600d9b1a7f325fd6d06759ede846c`
+**Post-release closeout main commit**: `4c655ea5455c0cb0e76fb611b422292bf54fb3bb`
+**Created at**: 2026-04-26T12:19:13+0900 JST
 **Correlation ID**: `EVID-BETA-1`
 
 ## 1. Scope
@@ -47,6 +48,7 @@ Out of scope:
 
 - GitHub repository: `ancient0328/CYRUNE`
 - `main` at beta release publication: `61eb4c68630600d9b1a7f325fd6d06759ede846c`
+- `main` after post-release closeout report publication: `4c655ea5455c0cb0e76fb611b422292bf54fb3bb`
 - `v0.1.1-beta.1` tag target: `61eb4c68630600d9b1a7f325fd6d06759ede846c`
 - `v0.1.0` tag target remains unchanged:
   - tag object: `55d9622d0795a1626be5da28dfbc5c4a6ac47f98`
@@ -119,6 +121,14 @@ GitHub Actions run:
 - conclusion: `success`
 - URL: `https://github.com/ancient0328/CYRUNE/actions/runs/24946963574`
 
+Post-release closeout GitHub Actions run:
+
+- workflow: `public-ci`
+- run id: `24947149680`
+- head SHA: `4c655ea5455c0cb0e76fb611b422292bf54fb3bb`
+- conclusion: `success`
+- URL: `https://github.com/ancient0328/CYRUNE/actions/runs/24947149680`
+
 Remote CI completed these beta gates:
 
 - public shell scripts parse,
@@ -136,44 +146,44 @@ Remote CI completed these beta gates:
 
 ### Gate 1. 個別事案固定性
 
-**判定**: Strong Yes  
-**理由**: 対象は `Distro/CYRUNE/public/free-v0.1/` / GitHub `ancient0328/CYRUNE` の CYRUNE Free v0.1 public beta release contract に固定されている。`v0.1.0` alpha snapshot、native distribution、OS sandbox、complete MAC、Pro / Enterprise / CITADEL は対象外として明示され、beta criteria と public docs に反映された。  
-**直接根拠**: `docs/BETA_CRITERIA.md`, `README.md`, `docs/CYRUNE_Free_Public_Index.md`, GitHub release `v0.1.1-beta.1`  
+**判定**: Strong Yes
+**理由**: 対象は `Distro/CYRUNE/public/free-v0.1/` / GitHub `ancient0328/CYRUNE` の CYRUNE Free v0.1 public beta release contract に固定されている。`v0.1.0` alpha snapshot、native distribution、OS sandbox、complete MAC、Pro / Enterprise / CITADEL は対象外として明示され、beta criteria と public docs に反映された。
+**直接根拠**: `docs/BETA_CRITERIA.md`, `README.md`, `docs/CYRUNE_Free_Public_Index.md`, GitHub release `v0.1.1-beta.1`
 **崩れる条件**: `v0.1.0` を beta と再解釈する、または native / Enterprise / CITADEL scope を beta 成立条件へ混入した場合。
 
 ### Gate 2. fail-closed
 
-**判定**: Strong Yes  
-**理由**: `scripts/check-beta-release-contract.sh` は beta tag / asset / docs / helper predicates を fail-closed に検査し、`prepare-public-run.sh` は beta carrier の filename / size / SHA256 / tar safety / manifest を検証する。CI はその検査を public-run preparation の前後で実行する。  
-**直接根拠**: `scripts/check-beta-release-contract.sh`, `scripts/prepare-public-run.sh`, `.github/workflows/public-ci.yml`, CI run `24946963574`  
+**判定**: Strong Yes
+**理由**: `scripts/check-beta-release-contract.sh` は beta tag / asset / docs / helper predicates を fail-closed に検査し、`prepare-public-run.sh` は beta carrier の filename / size / SHA256 / tar safety / manifest を検証する。CI はその検査を public-run preparation の前後で実行する。
+**直接根拠**: `scripts/check-beta-release-contract.sh`, `scripts/prepare-public-run.sh`, `.github/workflows/public-ci.yml`, CI run `24946963574`
 **崩れる条件**: asset hash mismatch、missing release manifest、docs claim overreach、または CI gate skip を成功扱いした場合。
 
 ### Gate 3. 根拠の接続と範囲
 
-**判定**: Strong Yes  
-**理由**: docs claim は beta criteria、runtime evidence は local first-success、release identity は GitHub prerelease/tag/asset、quality gate は local command と remote CI に分離され、first-success 単独を production maturity や native distribution の根拠にしていない。  
-**直接根拠**: `docs/BETA_CRITERIA.md`, `docs/FIRST_SUCCESS_EXPECTED.md`, release asset SHA256, local `EVID-1`, CI run `24946963574`  
+**判定**: Strong Yes
+**理由**: docs claim は beta criteria、runtime evidence は local first-success、release identity は GitHub prerelease/tag/asset、quality gate は local command と remote CI に分離され、first-success 単独を production maturity や native distribution の根拠にしていない。
+**直接根拠**: `docs/BETA_CRITERIA.md`, `docs/FIRST_SUCCESS_EXPECTED.md`, release asset SHA256, local `EVID-1`, CI run `24946963574`
 **崩れる条件**: first-success success を production maturity、native installer、OS-level sandbox、complete MAC の根拠として扱った場合。
 
 ### Gate 4. 構造・責務・意味論整合
 
-**判定**: Strong Yes  
-**理由**: source、carrier、release asset、CI、docs、evidence report の責務が分離され、`main` は latest public surface、`v0.1.0` は alpha snapshot、`v0.1.1-beta.1` は beta release-contract tag として時間相と責務が分かれている。stale alpha exporter は fail-closed 化された。  
-**直接根拠**: `README.md`, `docs/CYRUNE_Free_Public_Index.md`, `free/v0.1/0/scripts/export_public_corpus.py`, `free/v0.1/0/scripts/publish_release_package_to_github.py`  
+**判定**: Strong Yes
+**理由**: source、carrier、release asset、CI、docs、evidence report の責務が分離され、`main` は latest public surface と post-release closeout surface、`v0.1.0` は alpha snapshot、`v0.1.1-beta.1` は immutable beta release-contract tag として時間相と責務が分かれている。stale alpha exporter は fail-closed 化された。
+**直接根拠**: `README.md`, `docs/CYRUNE_Free_Public_Index.md`, `free/v0.1/0/scripts/export_public_corpus.py`, `free/v0.1/0/scripts/publish_release_package_to_github.py`
 **崩れる条件**: stale alpha generator が public beta surface を上書きできる状態に戻る、または beta carrier pin が alpha carrierへ戻る場合。
 
 ### Gate 5. 時間軸整合
 
-**判定**: Strong Yes  
-**理由**: `v0.1.0` は旧 alpha snapshot のまま保持され、`v0.1.1-beta.1` を新規 beta line として作成した。過去の alpha evidence は beta evidence に流用せず、新しい asset、CI、first-success evidence を作成した。  
-**直接根拠**: `git ls-remote` result for `v0.1.0` and `v0.1.1-beta.1`, GitHub release `v0.1.1-beta.1`, local `EVID-1`, CI run `24946963574`  
+**判定**: Strong Yes
+**理由**: `v0.1.0` は旧 alpha snapshot のまま保持され、`v0.1.1-beta.1` を新規 beta line として作成した。過去の alpha evidence は beta evidence に流用せず、新しい asset、CI、first-success evidence を作成した。
+**直接根拠**: `git ls-remote` result for `v0.1.0` and `v0.1.1-beta.1`, GitHub release `v0.1.1-beta.1`, local `EVID-1`, CI run `24946963574`
 **崩れる条件**: alpha tag を移動する、alpha release asset を beta asset として再利用する、または alpha closeout report を beta closeout として扱う場合。
 
 ### Gate 6. 未証明採用の不在
 
-**判定**: Strong Yes  
-**理由**: beta claim は remote prerelease、asset hash、public CI、local first-success、docs consistency、Closed Gate Report に限定されている。production maturity、native installer、OS-level sandbox enforcement、enforcement-complete classification / MAC、Pro / Enterprise / CITADEL は non-claim のまま残され、成立根拠に採用していない。  
-**直接根拠**: `README.md`, `docs/BETA_CRITERIA.md`, `docs/GETTING_STARTED.md`, `docs/USER_GUIDE.md`, local and remote validation listed above  
+**判定**: Strong Yes
+**理由**: beta claim は remote prerelease、asset hash、public CI、local first-success、docs consistency、Closed Gate Report に限定されている。production maturity、native installer、OS-level sandbox enforcement、enforcement-complete classification / MAC、Pro / Enterprise / CITADEL は non-claim のまま残され、成立根拠に採用していない。
+**直接根拠**: `README.md`, `docs/BETA_CRITERIA.md`, `docs/GETTING_STARTED.md`, `docs/USER_GUIDE.md`, local and remote validation listed above
 **崩れる条件**: 未実装または未検証の product maturity / native distribution / OS sandbox / complete MAC / upper-tier feature を beta 成立根拠へ追加した場合。
 
 ## 7. Result

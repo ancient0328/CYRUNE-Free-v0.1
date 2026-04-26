@@ -1,6 +1,6 @@
 # Third-Party Notices
 
-This file records third-party materials redistributed or materialized by the CYRUNE Free v0.1 public alpha repository and carrier.
+This file records third-party materials redistributed or materialized by the CYRUNE Free v0.1 public beta repository and carrier.
 
 ## intfloat/multilingual-e5-small
 
