@@ -60,6 +60,16 @@ All commands were executed from `/tmp/cyrune-publish-9ViAx3I6/CYRUNE`.
 
 The first direct `cargo test` attempt was rejected as non-acceptance evidence because the public-run carrier materialization state was incomplete at that instant. The accepted verification is the rerun after `./scripts/prepare-public-run.sh` completed with the full pinned carrier size and materialized `model.onnx` under `target/public-run/home/embedding/`.
 
+## 5.1 Post-Push Evidence
+
+- Commit pushed to `origin/main`: `6219f555e6b0743c3cb74cb92c554b1d855f67fd`
+- GitHub Actions run: `public-ci` run `24945521219`
+- GitHub Actions conclusion: `success`
+- Run URL: `https://github.com/ancient0328/CYRUNE/actions/runs/24945521219`
+- Remote `refs/heads/main`: `6219f555e6b0743c3cb74cb92c554b1d855f67fd`
+- Remote `refs/tags/v0.1.0^{}`: `e39b0326c746e1827c7829c3bf6bb804b0238b2a`
+- `v0.1.0` tag status: unchanged from pre-fix snapshot target.
+
 ## 6. 未完了だが正常なもの
 
 - Native installer / signed desktop distribution
@@ -117,7 +127,7 @@ The first direct `cargo test` attempt was rejected as non-acceptance evidence be
 
 - 判定: Strong Yes
 - 判定理由: `main` は latest public surface、`v0.1.0` は immutable snapshot として維持し、今回の変更は `main` の alpha quality correction に限定している。Past tag を移動せず、future tier / packaging scope は non-claim として分離している。
-- 直接根拠: `README.md`, `docs/CYRUNE_Free_Public_Index.md`, Git policy in current task scope, verification commands executed on current `main` worktree
+- 直接根拠: `README.md`, `docs/CYRUNE_Free_Public_Index.md`, Git policy in current task scope, verification commands executed on current `main` worktree, post-push remote ref evidence in section 5.1
 - この判定が崩れる条件: `v0.1.0` tag をこの修正に合わせて移動する、または future release-hardening items を current alpha completion の根拠に採用する場合。
 
 ### Gate 6: 未証明採用の不在
@@ -132,4 +142,4 @@ The first direct `cargo test` attempt was rejected as non-acceptance evidence be
 - `No`: なし
 - `Provisional Yes`: なし
 - 最終結論: この修正差分は、`public/free-v0.1/` の public alpha quality blocker fix として成立する。
-- 次 task: source mirror 同期、commit、push、GitHub Actions `public-ci` 成功確認、`v0.1.0` tag 不変確認。
+- 次 task: beta 昇格、release asset 更新、native distribution、OS-level sandbox enforcement、classification / MAC enforcement は今回の成立対象外であり、別 owner / 別 report で扱う。
