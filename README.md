@@ -54,6 +54,12 @@ Japanese companion documents do not override the English public claim boundary i
 - `scripts/`: public entry scripts
 - `free/v0.1/0/`: runnable Free source tree
 
+## License
+
+CYRUNE Free v0.1 first-party source is licensed under either MIT or Apache-2.0, at your option. See [LICENSE](LICENSE), [LICENSE-MIT](LICENSE-MIT), and [LICENSE-APACHE](LICENSE-APACHE).
+
+Third-party notices for redistributed model/tokenizer resources are tracked in [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md). This Free repository license does not license Pro / Pro+ / Enterprise / CITADEL product surfaces.
+
 ## Not Included
 
 - Native distributable release

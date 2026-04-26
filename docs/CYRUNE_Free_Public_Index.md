@@ -61,6 +61,7 @@ This public index treats the following as current public truth:
 10. GitHub `main` is the latest public repository surface.
 11. SemVer tags are immutable snapshots; `v0.1.0` is the published CYRUNE Free v0.1 public alpha snapshot tag.
 12. `v0.1` is a version marker / compatibility tag, not a branch name.
+13. The Free public repository license is `MIT OR Apache-2.0` for first-party source unless a file or third-party notice states otherwise.
 
 ## 6. Non-Authority For This Public Alpha
 
@@ -78,6 +79,7 @@ The following must not be treated as current public truth authority:
 10. concrete notarization provider value
 11. signed update package delivery
 12. a `v0.1` branch as the publication model
+13. Pro / Pro+ / Enterprise / CITADEL product surfaces as part of the Free repository license grant
 
 ## 7. Shelf Meaning
 

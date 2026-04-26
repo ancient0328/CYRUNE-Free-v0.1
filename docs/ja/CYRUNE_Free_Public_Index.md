@@ -54,6 +54,7 @@ product-first entry point は root `README.md` と `docs/GETTING_STARTED.md` で
 10. GitHub `main` は latest public repository surface です。
 11. SemVer tags は immutable snapshots であり、`v0.1.0` は published CYRUNE Free v0.1 public alpha snapshot tag です。
 12. `v0.1` は version marker / compatibility tag であり、branch 名ではありません。
+13. Free public repository license は、別ファイルまたは third-party notice が異なる条件を示す場合を除き、first-party source について `MIT OR Apache-2.0` です。
 
 ## 5. Non-Authority For This Public Alpha
 
@@ -70,6 +71,7 @@ product-first entry point は root `README.md` と `docs/GETTING_STARTED.md` で
 9. concrete signing identity value
 10. concrete notarization provider value
 11. `v0.1` branch as the publication model
+12. Pro / Pro+ / Enterprise / CITADEL product surfaces が Free repository license grant に含まれること
 
 ## 6. Shelf Meaning
 

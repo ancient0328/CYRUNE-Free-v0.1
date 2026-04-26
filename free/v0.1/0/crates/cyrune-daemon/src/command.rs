@@ -1518,7 +1518,7 @@ mod tests {
     };
     use serde_json::json;
     use std::fs;
-    use std::path::Path;
+    use std::path::{Path, PathBuf};
     use tempfile::tempdir;
 
     const ALT_POLICY_JSON: &str = r#"{
@@ -1684,13 +1684,7 @@ mod tests {
         bundle_root: &std::path::Path,
     ) {
         let crane_root = detect_crane_root().unwrap();
-        let workspace_root = std::path::PathBuf::from(env!("CARGO_MANIFEST_DIR"))
-            .join("..")
-            .join("..");
-        let embedding_source_root = workspace_root
-            .join("resources")
-            .join("bundle-root")
-            .join("embedding");
+        let embedding_source_root = complete_shipping_embedding_root();
         let home_template_root = distribution_root
             .join("share")
             .join("cyrune")
@@ -1780,6 +1774,44 @@ mod tests {
             )
             .unwrap(),
         );
+    }
+
+    fn workspace_root() -> PathBuf {
+        PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+            .join("..")
+            .join("..")
+    }
+
+    fn complete_shipping_embedding_root() -> PathBuf {
+        let mut candidates = Vec::new();
+        if let Some(root) = std::env::var_os("CYRUNE_TEST_SHIPPING_HOME_ROOT") {
+            candidates.push(PathBuf::from(root).join("embedding"));
+        }
+        candidates.push(workspace_root().join("target/public-run/home/embedding"));
+        candidates.push(workspace_root().join("resources/bundle-root/embedding"));
+
+        for candidate in candidates {
+            if has_required_shipping_embedding_files(&candidate) {
+                return candidate;
+            }
+        }
+
+        panic!(
+            "shipping daemon tests require materialized embedding artifacts; run ./scripts/prepare-public-run.sh or set CYRUNE_TEST_SHIPPING_HOME_ROOT"
+        );
+    }
+
+    fn has_required_shipping_embedding_files(root: &Path) -> bool {
+        [
+            "exact-pins/cyrune-free-shipping.v0.1.json",
+            "artifacts/multilingual-e5-small/model.onnx",
+            "artifacts/multilingual-e5-small/tokenizer.json",
+            "artifacts/multilingual-e5-small/config.json",
+            "artifacts/multilingual-e5-small/special_tokens_map.json",
+            "artifacts/multilingual-e5-small/tokenizer_config.json",
+        ]
+        .iter()
+        .all(|relative_path| root.join(relative_path).is_file())
     }
 
     fn packaged_context(cyrune_home: &std::path::Path) -> CommandContext {

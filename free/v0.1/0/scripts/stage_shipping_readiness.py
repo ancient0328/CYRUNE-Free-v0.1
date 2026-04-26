@@ -361,6 +361,15 @@ def write_license_bundle(licenses_dir: Path, sbom_relpath: str) -> None:
         - This readiness artifact satisfies third-party notice bundling by shipping this notice file,
           first-party license texts, and the SPDX dependency inventory together
 
+        ## Embedding artifact boundary
+
+        - Embedding model/tokenizer source: `intfloat/multilingual-e5-small`
+        - Upstream model page: `https://huggingface.co/intfloat/multilingual-e5-small`
+        - Upstream revision pinned by `embedding/exact-pins/cyrune-free-shipping.v0.1.json`
+        - Upstream license metadata source: the Hugging Face model page reports `license: mit`
+        - The public source tree carries tokenizer/config artifacts and an adjacent notice; the carrier may include the ONNX model artifact required by shipping exact-pin runtime validation
+        - No separate upstream `LICENSE` file is vendored for this model in the public repository; CYRUNE records upstream metadata and does not infer a missing upstream copyright notice
+
         ## WezTerm integration boundary
 
         - This readiness artifact ships the canonical `wezterm.lua` template only

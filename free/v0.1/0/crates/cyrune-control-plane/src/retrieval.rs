@@ -372,6 +372,7 @@ mod tests {
         upstream_revision: String,
         artifact_set: Vec<String>,
         artifact_sha256: std::collections::BTreeMap<String, String>,
+        artifact_paths: std::collections::BTreeMap<String, String>,
         dimensions: u16,
         pooling: String,
         normalization: String,
@@ -405,6 +406,52 @@ mod tests {
         PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../../resources/bundle-root/embedding")
     }
 
+    fn bundle_root() -> PathBuf {
+        PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../../resources/bundle-root")
+    }
+
+    fn public_run_home_root() -> PathBuf {
+        PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../../target/public-run/home")
+    }
+
+    fn complete_shipping_home_root() -> PathBuf {
+        let mut candidates = Vec::new();
+        if let Some(root) = std::env::var_os("CYRUNE_TEST_SHIPPING_HOME_ROOT") {
+            candidates.push(PathBuf::from(root));
+        }
+        candidates.push(public_run_home_root());
+        candidates.push(bundle_root());
+
+        for candidate in candidates {
+            if has_complete_shipping_embedding_home(&candidate) {
+                return candidate;
+            }
+        }
+
+        panic!(
+            "shipping tests require materialized embedding artifacts; run ./scripts/prepare-public-run.sh or set CYRUNE_TEST_SHIPPING_HOME_ROOT"
+        );
+    }
+
+    fn has_complete_shipping_embedding_home(home_root: &Path) -> bool {
+        let manifest_path = home_root
+            .join("embedding")
+            .join("exact-pins")
+            .join("cyrune-free-shipping.v0.1.json");
+        let Ok(bytes) = fs::read(manifest_path) else {
+            return false;
+        };
+        let Ok(manifest) = serde_json::from_slice::<ShippingExactPinManifest>(&bytes) else {
+            return false;
+        };
+        manifest.artifact_set.iter().all(|artifact_name| {
+            manifest
+                .artifact_paths
+                .get(artifact_name)
+                .is_some_and(|relative_path| home_root.join(relative_path).is_file())
+        })
+    }
+
     fn copy_tree(src: &Path, dst: &Path) {
         fs::create_dir_all(dst).unwrap();
         for entry in fs::read_dir(src).unwrap() {
@@ -420,7 +467,10 @@ mod tests {
     }
 
     fn materialize_shipping_embedding_home(home_root: &Path) {
-        copy_tree(&bundle_embedding_root(), &home_root.join("embedding"));
+        copy_tree(
+            &complete_shipping_home_root().join("embedding"),
+            &home_root.join("embedding"),
+        );
     }
 
     fn test_context() -> ResolvedTurnContext {
