@@ -64,7 +64,7 @@ Do not skip steps or change the sequence.
 
 ### 5.1 prepare-public-run
 
-This step downloads the configured release carrier, checks filename, size, SHA256, and tar member safety, extracts the home template into public-run state, builds the runtime binaries from the Free source tree, and installs `cyr` / `cyrune-daemon` into `free/v0.1/0/target/public-run/bin/`.
+This step downloads the configured release carrier, checks filename, size, SHA256, and tar member safety, extracts the home template into public-run state, builds the runtime binaries from the Free source tree, and installs `cyr` / `cyrune-daemon` into `target/public-run/bin/`.
 
 ### 5.2 doctor
 
@@ -89,15 +89,15 @@ Read `docs/FIRST_SUCCESS_EXPECTED.md` for the expected evidence paths and output
 After a successful prepare step, the public-run state is under:
 
 ```text
-free/v0.1/0/target/public-run/
+target/public-run/
 ```
 
 After a successful first-success step, inspect:
 
-- `free/v0.1/0/target/public-run/home/ledger/manifests/index.jsonl`
-- `free/v0.1/0/target/public-run/home/ledger/evidence/<evidence_id>/`
-- `free/v0.1/0/target/public-run/home/ledger/terminal-bindings/<evidence_id>.json`
-- `free/v0.1/0/target/public-run/home/working/working.json`
+- `target/public-run/home/ledger/manifests/index.jsonl`
+- `target/public-run/home/ledger/evidence/<evidence_id>/`
+- `target/public-run/home/ledger/terminal-bindings/<evidence_id>.json`
+- `target/public-run/home/working/working.json`
 
 ## 7. Failure Handling
 

@@ -3,7 +3,7 @@
 **日付 (JST)**: 2026-03-01
 **状態（当時）**: Draft（正典候補）
 **現在の権威状態**: Historical draft / non-authoritative
-**取り扱い**: 2026-04-11 JST の D7 closeout 後、この文書は current accepted canonical ではない。初期 canonical 候補と設計背景の参照に限定する。現行 authority は `free/v0.1/dev-docs/04-implementation-notes/TERMINAL_BUNDLE_PRODUCTIZATION_CANONICAL.md`、`free/v0.1/dev-docs/04-implementation-notes/D7_BUNDLE_IDENTITY_AND_REBRAND_CANONICAL.md`、`free/v0.1/dev-docs/90-reports/20260411-terminal-D7-terminal-bundle-productization-proof.md` である。
+**取り扱い**: 2026-04-11 JST の D7 closeout 後、この文書は current accepted canonical ではない。初期 canonical 候補と設計背景の参照に限定する。現行 authority は `Distro/CYRUNE/free/full/v01/dev-docs/04-implementation-notes/TERMINAL_BUNDLE_PRODUCTIZATION_CANONICAL.md`、`Distro/CYRUNE/free/full/v01/dev-docs/04-implementation-notes/D7_BUNDLE_IDENTITY_AND_REBRAND_CANONICAL.md`、`Distro/CYRUNE/free/full/v01/dev-docs/90-reports/20260411-terminal-D7-terminal-bundle-productization-proof.md` である。
 **対象**: CYRUNE v0.1（22日スコープを含む）
 
 ---

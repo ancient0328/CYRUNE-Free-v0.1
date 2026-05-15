@@ -12,7 +12,7 @@
 - `README.ja.md`
 - `docs/`
 - `scripts/`
-- `free/v0.1/0/`
+- repository-root source tree
 
 この文書が説明するのは、公開される physical surface、public script の root 解決、`target/public-run/` に生成される state、public-run behavior を壊し得る変更点、maintenance 時の確認 predicate、そして public beta が主張しない runtime / product scope です。
 
@@ -29,7 +29,7 @@
 3. separated reference shelves:
    `docs/historical/`、`docs/deferred/`、`docs/ja/`
 4. runnable source tree:
-   `free/v0.1/0/`
+   repository root
 
 ## 3. Repository Publication Model
 
@@ -50,16 +50,22 @@ Top-level layout は次です。
 
 - `README.md`
 - `README.ja.md`
+- `Adapter/`
+- `CRANE-Kernel/`
+- `Cargo.toml`
+- `Cargo.lock`
+- `crates/`
 - `docs/`
+- `resources/`
 - `scripts/`
-- `free/`
+- `tests/`
 
 `docs/current/` は current public truth references を含みます。
 `docs/deferred/` は Free v0.1 beta claim に自動採用されない future-publication / upper-tier material を含みます。
 `docs/historical/` は non-authoritative historical material を含みます。
 `docs/ja/` は Japanese companion documents を含みます。
 
-`free/v0.1/0/` は runnable source tree です。
+repository root は runnable source tree です。
 
 主な implementation family は次です。
 
@@ -83,9 +89,9 @@ script は次を導出します。
 
 1. `SCRIPT_DIR`: `scripts/`
 2. `PUBLIC_ROOT`: repository root
-3. `FREE_ROOT`: `free/v0.1/0`
-4. `STATE_ROOT`: `free/v0.1/0/target/public-run`
-5. `CYRUNE_HOME`: `free/v0.1/0/target/public-run/home`
+3. `FREE_ROOT`: repository root
+4. `STATE_ROOT`: `target/public-run`
+5. `CYRUNE_HOME`: `target/public-run/home`
 
 ## 6. prepare-public-run Contract
 
@@ -174,6 +180,6 @@ public CI は次を確認します。
 - Rust workspace check
 - Rust lint with warnings denied
 
-runtime first-success validation は `docs/FIRST_SUCCESS_EXPECTED.md` に記載され、local evidence は `free/v0.1/0/target/public-run/home/` に生成されます。
+runtime first-success validation は `docs/FIRST_SUCCESS_EXPECTED.md` に記載され、local evidence は `target/public-run/home/` に生成されます。
 
 beta release-contract criteria は `docs/BETA_CRITERIA.md` に定義されています。

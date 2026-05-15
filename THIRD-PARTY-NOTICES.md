@@ -8,7 +8,7 @@ This file records third-party materials redistributed or materialized by the CYR
 - Upstream model page: <https://huggingface.co/intfloat/multilingual-e5-small>
 - Upstream revision pinned by CYRUNE: `03415a4be176a1620747c692ed433219fabc3def`
 - Upstream license metadata source: the Hugging Face model page reports `license: mit`
-- Local source resource area: `free/v0.1/0/resources/bundle-root/embedding/artifacts/multilingual-e5-small/`
+- Local source resource area: `resources/bundle-root/embedding/artifacts/multilingual-e5-small/`
 - Runtime carrier materializes the pinned ONNX/tokenizer artifact set under `embedding/artifacts/multilingual-e5-small/`.
 
 The model/tokenizer resources are third-party materials. They are not covered by CYRUNE's first-party MIT OR Apache-2.0 source license statement except where the upstream license permits redistribution.

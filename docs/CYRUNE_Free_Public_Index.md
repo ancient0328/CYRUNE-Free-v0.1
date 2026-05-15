@@ -33,17 +33,16 @@ The Japanese technical problem statement at `docs/current/CYRUNE_ProblemStatemen
 Read these only when additional background is needed:
 
 1. `docs/current/CYRUNE_Free_v0.1_Diagrams.html`
-2. `docs/current/mermaid/`
-3. `docs/historical/`
-4. `docs/deferred/`
-5. `free/v0.1/dev-docs/`
+2. `docs/historical/`
+3. `docs/deferred/`
+4. source-side public dev-docs at `Distro/CYRUNE/free/public/v01/dev-docs/`
 
-The `free/v0.1/dev-docs/` tree contains development history, evidence reports, and operational notes. It does not override the public beta claim boundary, the repository publication model, or the primary reading order in this index.
+The source-side public dev-docs tree contains development history, evidence reports, and operational notes. It does not override the public beta claim boundary, the repository publication model, or the primary reading order in this index.
 
 ## 4. Source-Side Path Boundary
 
 On GitHub, the repository root is the public package root.
-The source-side path `Distro/CYRUNE/public/free-v0.1/` is a private-workspace provenance path used before publication.
+The source-side path `Distro/CYRUNE/free/public/v01/0/` is the local private-workspace mirror of that public package root.
 It is not a path a public GitHub reader needs to have locally.
 
 ## 5. Authoritative Public Truth

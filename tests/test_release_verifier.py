@@ -193,16 +193,13 @@ class ReleaseVerifierTest(unittest.TestCase):
             "scripts/first-success.sh",
             "scripts/check-beta-release-contract.sh",
             ".github/workflows/public-ci.yml",
-            "free/v0.1/0/Cargo.toml",
-            "free/v0.1/dev-docs/90-reports/.keep",
+            "Cargo.toml",
         ]:
             path = root / relative
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text("fixture\n", encoding="utf-8")
 
-        state_root = (root / "free" / "v0.1" / "0" / "target" / "public-run").resolve(
-            strict=False
-        )
+        state_root = (root / "target" / "public-run").resolve(strict=False)
         cyrune_home = (state_root / "home").resolve(strict=False)
         evidence_dir = cyrune_home / "ledger" / "evidence" / "EVID-1"
         terminal_dir = cyrune_home / "ledger" / "terminal-bindings"

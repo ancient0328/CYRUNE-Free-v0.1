@@ -28,9 +28,9 @@ ASSET_DIGEST = "sha256:73654922f0f1c170ce34001d6f1021b72ec9eb8c28aa8a81a3d572ccd
 POLICY_PACK_ID = "cyrune-free-default"
 PUBLIC_FIRST_SUCCESS_INPUT = "ship-goal public first success"
 RUN_MODE = "no_llm"
-FIRST_SUCCESS_REPORT = "free/v0.1/0/target/public-run/first-success-report.json"
+FIRST_SUCCESS_REPORT = "target/public-run/first-success-report.json"
 CGR_OUTPUT_TARGET = (
-    "free/v0.1/dev-docs/90-reports/"
+    "../dev-docs/90-reports/"
     "20260430-public-EVID-BETA-2-terminal-evidence-release-contract.md"
 )
 
@@ -155,7 +155,7 @@ def resolve_candidate_root(value: str, ctx: Context) -> Path:
         "scripts/first-success.sh",
         "scripts/check-beta-release-contract.sh",
         ".github/workflows/public-ci.yml",
-        "free/v0.1/0/Cargo.toml",
+        "Cargo.toml",
     ]:
         if not (resolved / relative).exists():
             fail("BETA-CANDIDATE-ROOT-INVALID", f"candidate root missing {relative}")
@@ -174,25 +174,29 @@ def resolve_relative_under(root: Path, value: str, code: str) -> Path:
     return resolved
 
 
+def resolve_cgr_target(root: Path, value: str) -> Path:
+    if value != CGR_OUTPUT_TARGET:
+        fail("BETA-CGR-TARGET-MISMATCH", f"--cgr-output-target must be {CGR_OUTPUT_TARGET}")
+    path = Path(value)
+    resolved = (root / path).resolve(strict=False)
+    expected_parent = (root.parent / "dev-docs" / "90-reports").resolve(strict=False)
+    if resolved.parent != expected_parent:
+        fail("BETA-CGR-TARGET-MISMATCH", f"CGR target parent mismatch: {resolved.parent}")
+    return resolved
+
+
 def resolve_report_paths(root: Path, args: dict[str, str]) -> tuple[Path, Path]:
     if args["--first-success-report"] != FIRST_SUCCESS_REPORT:
         fail(
             "BETA-FIRST-SUCCESS-REPORT-INVALID",
             f"--first-success-report must be {FIRST_SUCCESS_REPORT}",
         )
-    if args["--cgr-output-target"] != CGR_OUTPUT_TARGET:
-        fail("BETA-CGR-TARGET-MISMATCH", f"--cgr-output-target must be {CGR_OUTPUT_TARGET}")
     first_success = resolve_relative_under(
         root, args["--first-success-report"], "BETA-CANDIDATE-ROOT-INVALID"
     )
-    cgr_target = resolve_relative_under(
-        root, args["--cgr-output-target"], "BETA-CANDIDATE-ROOT-INVALID"
-    )
+    cgr_target = resolve_cgr_target(root, args["--cgr-output-target"])
     if not first_success.is_file():
         fail("BETA-FIRST-SUCCESS-REPORT-MISSING", f"missing first-success report: {first_success}")
-    expected_parent = (root / "free/v0.1/dev-docs/90-reports").resolve(strict=False)
-    if cgr_target.parent != expected_parent:
-        fail("BETA-CGR-TARGET-MISMATCH", f"CGR target parent mismatch: {cgr_target.parent}")
     return first_success, cgr_target
 
 
@@ -346,7 +350,7 @@ def verify_first_success_report(root: Path, report_path: Path, ctx: Context) -> 
     if report.get("terminal_binding_path") != expected_marker:
         fail("BETA-FIRST-SUCCESS-ID-MISMATCH", "terminal binding path summary mismatch")
 
-    expected_state_root = (root / "free/v0.1/0/target/public-run").resolve(strict=False)
+    expected_state_root = (root / "target/public-run").resolve(strict=False)
     expected_home = (expected_state_root / "home").resolve(strict=False)
     if report.get("state_root") != str(expected_state_root):
         fail("BETA-FIRST-SUCCESS-ROOT-MISMATCH", "first-success state_root mismatch")

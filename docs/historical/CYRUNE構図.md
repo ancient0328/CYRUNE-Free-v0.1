@@ -2,7 +2,7 @@
 
 **状態（当時）**: Historical tier and positioning sketch
 **現在の権威状態**: Historical / non-authoritative
-**取り扱い**: 2026-04-12 JST の `PB-C / PBC-I1 authority-state segregation` 後、この文書は current accepted source ではない。ティア積層と製品ポジショニングの初期整理として参照に限定する。現行 authority は `docs/deferred/CYRUNE_ProductTierCanonical.md`、`docs/current/CYRUNE-Free_Canonical.md`、`free/v0.1/dev-docs/summary/01-SYSTEM_AND_SCOPE.md` である。
+**取り扱い**: 2026-04-12 JST の `PB-C / PBC-I1 authority-state segregation` 後、この文書は current accepted source ではない。ティア積層と製品ポジショニングの初期整理として参照に限定する。現行 authority は `docs/deferred/CYRUNE_ProductTierCanonical.md`、`docs/current/CYRUNE-Free_Canonical.md`、`Distro/CYRUNE/free/full/v01/dev-docs/summary/01-SYSTEM_AND_SCOPE.md` である。
 
 ---
 

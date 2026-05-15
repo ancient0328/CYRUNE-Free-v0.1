@@ -26,21 +26,19 @@ jobs:
           done
 
       - name: Check Python helper syntax
-        run: |
-          python3 -m py_compile free/v0.1/0/scripts/*.py
-          python3 -m py_compile scripts/verify-beta-release-contract.py
+        run: python3 -m py_compile scripts/*.py
 
       - name: Check public envelope predicates
         run: bash scripts/check-public-envelope.sh
 
       - name: Check Rust formatting
-        run: cargo fmt --manifest-path free/v0.1/0/Cargo.toml --all -- --check
+        run: cargo fmt --manifest-path Cargo.toml --all -- --check
 
       - name: Check Rust workspace
-        run: cargo check --manifest-path free/v0.1/0/Cargo.toml --workspace --all-targets
+        run: cargo check --manifest-path Cargo.toml --workspace --all-targets
 
       - name: Check Rust lint
-        run: cargo clippy --manifest-path free/v0.1/0/Cargo.toml --workspace --all-targets -- -D warnings
+        run: cargo clippy --manifest-path Cargo.toml --workspace --all-targets -- -D warnings
 
       - name: Prepare public first-success state
         run: ./scripts/prepare-public-run.sh
@@ -59,7 +57,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: public-first-success-report
-          path: free/v0.1/0/target/public-run/first-success-report.json
+          path: target/public-run/first-success-report.json
           if-no-files-found: ignore
           retention-days: 30
 
@@ -74,10 +72,10 @@ jobs:
             --asset-id "$BETA_ASSET_ID" \
             --asset-digest "$BETA_ASSET_DIGEST" \
             --ci-run-id "$BETA_CI_RUN_ID" \
-            --cgr-output-target "free/v0.1/dev-docs/90-reports/20260430-public-EVID-BETA-2-terminal-evidence-release-contract.md" \
-            --first-success-report "free/v0.1/0/target/public-run/first-success-report.json"
+            --cgr-output-target "../dev-docs/90-reports/20260430-public-EVID-BETA-2-terminal-evidence-release-contract.md" \
+            --first-success-report "target/public-run/first-success-report.json"
 
       - name: Check Rust tests
         env:
-          CYRUNE_TEST_SHIPPING_HOME_ROOT: ${{ github.workspace }}/free/v0.1/0/target/public-run/home
-        run: cargo test --manifest-path free/v0.1/0/Cargo.toml --workspace --all-targets
+          CYRUNE_TEST_SHIPPING_HOME_ROOT: ${{ github.workspace }}/target/public-run/home
+        run: cargo test --manifest-path Cargo.toml --workspace --all-targets

@@ -9,14 +9,12 @@ PUBLIC_ROOT = Path(__file__).resolve().parents[1]
 
 def _project_root_with_source_dev_docs(public_root: Path) -> Path | None:
     candidates = [
-        public_root.parents[1],
-        public_root,
+        public_root.parents[2] / "full" / "v01",
+        public_root.parent,
     ]
     for candidate in candidates:
         if (
             candidate
-            / "free"
-            / "v0.1"
             / "dev-docs"
             / "04-implementation-notes"
             / "CURRENT_BETA_IDENTITY_CANONICAL.md"
@@ -39,20 +37,14 @@ if PROJECT_ROOT is None:
 else:
     DEV_DOCS_CONTRACTS = [
         PROJECT_ROOT
-        / "free"
-        / "v0.1"
         / "dev-docs"
         / "04-implementation-notes"
         / "CURRENT_BETA_IDENTITY_CANONICAL.md",
         PROJECT_ROOT
-        / "free"
-        / "v0.1"
         / "dev-docs"
         / "04-implementation-notes"
         / "PUBLIC_BETA_TERMINAL_EVIDENCE_CANONICAL.md",
         PROJECT_ROOT
-        / "free"
-        / "v0.1"
         / "dev-docs"
         / "05-ci"
         / "PUBLIC_BETA_VERIFIER_CI_CANONICAL.md",

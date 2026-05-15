@@ -15,7 +15,7 @@ Run this only after `prepare-public-run.sh` and `doctor.sh` have succeeded.
 The script fixes `CYRUNE_HOME` to:
 
 ```text
-free/v0.1/0/target/public-run/home
+target/public-run/home
 ```
 
 Then it runs:
@@ -54,7 +54,7 @@ The report contains the full accepted response under `response`.
 When `evidence_id` is returned, the corresponding local evidence directory is expected under:
 
 ```text
-free/v0.1/0/target/public-run/home/ledger/evidence/<evidence_id>/
+target/public-run/home/ledger/evidence/<evidence_id>/
 ```
 
 For an accepted run, the evidence directory is expected to contain:
@@ -72,13 +72,13 @@ For an accepted run, the evidence directory is expected to contain:
 The working projection is expected under:
 
 ```text
-free/v0.1/0/target/public-run/home/working/working.json
+target/public-run/home/working/working.json
 ```
 
 The terminal binding marker is expected under:
 
 ```text
-free/v0.1/0/target/public-run/home/ledger/terminal-bindings/<evidence_id>.json
+target/public-run/home/ledger/terminal-bindings/<evidence_id>.json
 ```
 
 The verifier accepts the run only when the response, manifest, evidence files, terminal binding marker, and `working/working.json` raw hash agree.
@@ -129,4 +129,4 @@ Each `first-success.sh` invocation must be evaluated independently.
 
 If `first-success.sh` is rerun without rerunning `prepare-public-run.sh`, do not assume the same `run_id` or `evidence_id`. Use the IDs returned by that specific run and inspect the matching evidence directory.
 
-If `prepare-public-run.sh` is rerun, it recreates `free/v0.1/0/target/public-run/`. Treat evidence under the previous public-run state root as non-current for the new run.
+If `prepare-public-run.sh` is rerun, it recreates `target/public-run/`. Treat evidence under the previous public-run state root as non-current for the new run.

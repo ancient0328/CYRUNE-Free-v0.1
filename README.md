@@ -33,12 +33,12 @@ Japanese companion documents do not override the English public claim boundary i
 3. [Troubleshooting](docs/TROUBLESHOOTING.md)
 4. [Public Beta Criteria](docs/BETA_CRITERIA.md)
 5. [Public Index](docs/CYRUNE_Free_Public_Index.md)
-6. [Free Source](free/v0.1/0/)
+6. [Free Source](./)
 
 ## What This Beta Provides
 
 - The public repository contains the Free v0.1 source surface and the public scripts needed for the first-success flow.
-- `prepare-public-run.sh` downloads and validates the pinned beta carrier, then prepares local state under `free/v0.1/0/target/public-run/`.
+- `prepare-public-run.sh` downloads and validates the pinned beta carrier, then prepares local state under `target/public-run/`.
 - `doctor.sh` checks that the prepared state is diagnosable.
 - `first-success.sh` runs the semantic first-success verifier and emits `first-success-report.json`; success means the verifier returned `outcome: "accepted"` and the matching terminal binding marker exists.
 - The beta release contract binds the tracked source, beta carrier asset, CI, docs, first-success evidence, and Closed Gate Report.
@@ -55,7 +55,7 @@ Japanese companion documents do not override the English public claim boundary i
 - `README.md`: public product entry
 - `docs/`: public documentation, expected first-success output, and separated reference shelves
 - `scripts/`: public entry scripts
-- `free/v0.1/0/`: runnable Free source tree
+- repository root: runnable Free source tree
 
 ## License
 

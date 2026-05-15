@@ -38,7 +38,7 @@ A public beta claim requires all of the following evidence to exist for the same
 9. returned `evidence_id`, expected accepted-run evidence files, matching terminal binding marker, and visible `working/working.json` raw hash,
 10. public docs consistency scan,
 11. license / third-party notice boundary check,
-12. Closed Gate Report under `free/v0.1/dev-docs/90-reports/`.
+12. Closed Gate Report under the source-side public dev-docs report root `Distro/CYRUNE/free/public/v01/dev-docs/90-reports/`.
 
 If any required evidence is missing or fails, the beta claim is not established.
 
@@ -52,7 +52,7 @@ The public beta runtime path remains:
 ./scripts/first-success.sh
 ```
 
-`prepare-public-run.sh` must download the configured beta carrier, verify filename, size, SHA256, and tar member safety, require `RELEASE_MANIFEST.json`, prepare local state, build runtime binaries from source, and install `cyr` / `cyrune-daemon` into `free/v0.1/0/target/public-run/bin/`.
+`prepare-public-run.sh` must download the configured beta carrier, verify filename, size, SHA256, and tar member safety, require `RELEASE_MANIFEST.json`, prepare local state, build runtime binaries from source, and install `cyr` / `cyrune-daemon` into `target/public-run/bin/`.
 
 `doctor.sh` and `first-success.sh` must run only against the prepared public-run state.
 

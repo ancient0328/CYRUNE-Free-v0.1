@@ -1,6 +1,6 @@
 # GETTING_STARTED
 
-Run the three scripts in order from the public repository root. `prepare-public-run.sh` downloads and validates the required carrier, normalizes it into `free/v0.1/0/target/public-run/`, builds the local runtime binaries, and prepares local runtime state. Do not skip steps or change the sequence.
+Run the three scripts in order from the public repository root. `prepare-public-run.sh` downloads and validates the required carrier, normalizes it into `target/public-run/`, builds the local runtime binaries, and prepares local runtime state. Do not skip steps or change the sequence.
 
 This is the public beta first-success path for the `v0.1.1-beta.1` release contract. It is expected to prepare local state from the pinned beta carrier, pass `doctor`, and return a verifier report with `verified: true` and `outcome: "accepted"` for the packaged Free v0.1 no-LLM path. It does not prove production maturity, native distribution, OS-level sandbox isolation, enforcement-complete classification / MAC, or Pro / Enterprise / CITADEL scope.
 

@@ -72,7 +72,7 @@ for path in [
     if "OS-level sandbox" not in content:
         fail(f"{path} lost OS-level sandbox non-claim boundary")
 
-stage = read("free/v0.1/0/scripts/stage_shipping_readiness.py")
+stage = read("scripts/stage_shipping_readiness.py")
 for fragment in [
     'VERSION = "0.1.1-beta.1"',
     'ARCHIVE_BASENAME = "cyrune-free-v0.1.1-beta.1"',
@@ -81,7 +81,7 @@ for fragment in [
     if fragment not in stage:
         fail(f"stage_shipping_readiness.py missing beta fragment: {fragment}")
 
-publish = read("free/v0.1/0/scripts/publish_release_package_to_github.py")
+publish = read("scripts/publish_release_package_to_github.py")
 for fragment in [
     'RELEASE_TAG = "v0.1.1-beta.1"',
     'ASSET_FILENAME = "cyrune-free-v0.1.1-beta.1.tar.gz"',
@@ -91,7 +91,7 @@ for fragment in [
     if fragment not in publish:
         fail(f"publish_release_package_to_github.py missing beta fragment: {fragment}")
 
-archive = root / "free/v0.1/0/target/public-run" / beta_asset
+archive = root / "target/public-run" / beta_asset
 if archive.exists():
     with tarfile.open(archive, "r:gz") as handle:
         member_name = f"{beta_root}/RELEASE_MANIFEST.json"

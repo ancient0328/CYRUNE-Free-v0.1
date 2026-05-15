@@ -80,6 +80,7 @@ class Roots:
     script_dir: Path
     standalone_root: Path
     version_root: Path
+    public_family_root: Path
     free_family_root: Path
     source_root: Path
     public_root: Path
@@ -182,17 +183,20 @@ def resolve_roots(
     script_dir = script_path.parent
     standalone_root = script_dir.parent
     version_root = standalone_root.parent
-    free_family_root = version_root.parent
+    public_family_root = version_root.parent
+    free_family_root = public_family_root.parent
     source_root = free_family_root.parent
-    public_root = source_root / "public" / "free-v0.1"
-    public_branch_root = public_root / "free" / "v0.1" / "0"
+    public_root = standalone_root
+    public_branch_root = standalone_root
 
     if script_dir != standalone_root / "scripts":
         raise fail(f"unexpected SCRIPT_DIR: {script_dir}")
     if standalone_root.name != "0":
         raise fail(f"unexpected STANDALONE_ROOT: {standalone_root}")
-    if version_root.name != "v0.1":
+    if version_root.name != "v01":
         raise fail(f"unexpected VERSION_ROOT: {version_root}")
+    if public_family_root.name != "public":
+        raise fail(f"unexpected PUBLIC_FAMILY_ROOT: {public_family_root}")
     if free_family_root.name != "free":
         raise fail(f"unexpected FREE_FAMILY_ROOT: {free_family_root}")
     if source_root.name != "CYRUNE" or source_root.parent.name != "Distro":
@@ -228,6 +232,7 @@ def resolve_roots(
         script_dir=script_dir,
         standalone_root=standalone_root,
         version_root=version_root,
+        public_family_root=public_family_root,
         free_family_root=free_family_root,
         source_root=source_root,
         public_root=public_root,

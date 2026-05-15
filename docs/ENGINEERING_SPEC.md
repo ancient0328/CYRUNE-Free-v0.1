@@ -13,7 +13,7 @@ This document covers the repository root contents and the package-level implemen
 - `README.md`
 - `docs/`
 - `scripts/`
-- `free/v0.1/0/`
+- repository-root source tree
 
 It is meant to answer:
 
@@ -37,7 +37,7 @@ The public repository has four surfaces:
 3. separated reference shelves:
    `docs/historical/`, `docs/deferred/`, `docs/ja/`
 4. runnable source tree:
-   `free/v0.1/0/`
+   repository root
 
 ## 3. Repository Publication Model
 
@@ -58,16 +58,22 @@ Top-level layout:
 
 - `README.md`
 - `README.ja.md`
+- `Adapter/`
+- `CRANE-Kernel/`
+- `Cargo.toml`
+- `Cargo.lock`
+- `crates/`
 - `docs/`
+- `resources/`
 - `scripts/`
-- `free/`
+- `tests/`
 
 `docs/current/` contains current public truth references.
 `docs/deferred/` contains future-publication or upper-tier material that is not adopted into Free v0.1 beta claims.
 `docs/historical/` contains non-authoritative historical material.
 `docs/ja/` contains Japanese companion documents.
 
-`free/v0.1/0/` contains the runnable source tree.
+The repository root contains the runnable source tree.
 
 Important implementation families:
 
@@ -91,9 +97,9 @@ They derive:
 
 1. `SCRIPT_DIR`: `scripts/`
 2. `PUBLIC_ROOT`: repository root
-3. `FREE_ROOT`: `free/v0.1/0`
-4. `STATE_ROOT`: `free/v0.1/0/target/public-run`
-5. `CYRUNE_HOME`: `free/v0.1/0/target/public-run/home`
+3. `FREE_ROOT`: repository root
+4. `STATE_ROOT`: `target/public-run`
+5. `CYRUNE_HOME`: `target/public-run/home`
 
 ## 6. prepare-public-run Contract
 
@@ -182,6 +188,6 @@ The public CI checks:
 - Rust workspace check,
 - Rust lint with warnings denied.
 
-Runtime first-success validation is documented in `docs/FIRST_SUCCESS_EXPECTED.md` and produces local evidence under `free/v0.1/0/target/public-run/home/`.
+Runtime first-success validation is documented in `docs/FIRST_SUCCESS_EXPECTED.md` and produces local evidence under `target/public-run/home/`.
 
 The beta release-contract criteria are documented in `docs/BETA_CRITERIA.md`.

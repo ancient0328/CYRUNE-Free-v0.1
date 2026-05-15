@@ -32,12 +32,11 @@ product-first entry point は root `README.md` と `docs/GETTING_STARTED.md` で
 追加背景が必要な場合にのみ、次を参照します。
 
 1. `docs/current/CYRUNE_Free_v0.1_Diagrams.html`
-2. `docs/current/mermaid/`
-3. `docs/historical/`
-4. `docs/deferred/`
-5. `free/v0.1/dev-docs/`
+2. `docs/historical/`
+3. `docs/deferred/`
+4. source-side public dev-docs at `Distro/CYRUNE/free/public/v01/dev-docs/`
 
-`free/v0.1/dev-docs/` は development history、evidence reports、operational notes を含みます。それらは public beta claim boundary、repository publication model、primary reading order を上書きしません。
+source-side public dev-docs は development history、evidence reports、operational notes を含みます。それらは public beta claim boundary、repository publication model、primary reading order を上書きしません。
 
 ## 4. Authoritative Public Truth
 

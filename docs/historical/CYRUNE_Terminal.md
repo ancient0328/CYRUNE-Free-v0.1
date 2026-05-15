@@ -3,7 +3,7 @@
 **日付 (JST)**: 2026-03-01
 **状態（当時）**: 提案（Proposed）
 **現在の権威状態**: Historical / non-authoritative
-**取り扱い**: 2026-04-11 JST の D7 closeout 後、この文書は current accepted source ではない。初期 ADR と判断背景の参照にのみ使う。現行 authority は `free/v0.1/dev-docs/04-implementation-notes/TERMINAL_BUNDLE_PRODUCTIZATION_CANONICAL.md`、`free/v0.1/dev-docs/01-roadmap/20260411-d7-terminal-bundle-productization-executable-roadmap.md`、`free/v0.1/dev-docs/90-reports/20260411-terminal-D7-terminal-bundle-productization-proof.md` である。
+**取り扱い**: 2026-04-11 JST の D7 closeout 後、この文書は current accepted source ではない。初期 ADR と判断背景の参照にのみ使う。現行 authority は `Distro/CYRUNE/free/full/v01/dev-docs/04-implementation-notes/TERMINAL_BUNDLE_PRODUCTIZATION_CANONICAL.md`、`Distro/CYRUNE/free/full/v01/dev-docs/01-roadmap/20260411-d7-terminal-bundle-productization-executable-roadmap.md`、`Distro/CYRUNE/free/full/v01/dev-docs/90-reports/20260411-terminal-D7-terminal-bundle-productization-proof.md` である。
 **決定ID**: ADR-CTERM-0001
 
 ---

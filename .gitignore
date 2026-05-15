@@ -1,21 +1,13 @@
-# Generated Rust artifacts
 target/
-free/v0.1/0/target/
+.cyrune/
+.cyrune-home/
 
-# Local runtime state
-free/v0.1/0/.cyrune/
-free/v0.1/0/.cyrune-home/
-
-# Environment and local secrets
 .env
 .env.*
 !.env.example
 
-# Logs and temporary files
 *.log
 *.tmp
 .DS_Store
-
-# Python generated artifacts
 __pycache__/
 *.py[cod]

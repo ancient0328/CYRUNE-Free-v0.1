@@ -10,29 +10,35 @@ from pathlib import Path
 
 
 TRACKED_TOP_LEVEL_ENTRY_SET = {
-    ".github",
     ".gitignore",
+    ".github",
+    "Adapter",
+    "CRANE-Kernel",
+    "Cargo.lock",
+    "Cargo.toml",
     "LICENSE",
     "LICENSE-APACHE",
     "LICENSE-MIT",
     "README.ja.md",
     "README.md",
     "THIRD-PARTY-NOTICES.md",
+    "crates",
     "docs",
-    "free",
+    "resources",
     "scripts",
+    "tests",
 }
-FORBIDDEN_PARTS = {"target", "__pycache__"}
+FORBIDDEN_PARTS = {".git", "target", "__pycache__"}
 FORBIDDEN_NAMES = {".DS_Store"}
 FORBIDDEN_SUFFIXES = {".pyc"}
 CARRIER_ONLY_EXCLUDED_RELATIVE_PATHS = {
-    Path("free/v0.1/0/resources/bundle-root/embedding/artifacts/multilingual-e5-small/model.onnx")
+    Path("resources/bundle-root/embedding/artifacts/multilingual-e5-small/model.onnx")
 }
 REQUIRED_RELATIVE_PATHS = {
+    Path(".gitignore"),
+    Path(".github/workflows/public-ci.yml"),
     Path("README.md"),
     Path("README.ja.md"),
-    Path(".github/workflows/public-ci.yml"),
-    Path(".gitignore"),
     Path("LICENSE"),
     Path("LICENSE-APACHE"),
     Path("LICENSE-MIT"),
@@ -44,20 +50,8 @@ REQUIRED_RELATIVE_PATHS = {
     Path("scripts/prepare-public-run.sh"),
     Path("scripts/doctor.sh"),
     Path("scripts/first-success.sh"),
-    Path("free/v0.1/0/Cargo.toml"),
-    Path("free/v0.1/0/Cargo.lock"),
-    Path("free/v0.1/dev-docs/summary/00-SUMMARY_INDEX.md"),
-    Path("free/v0.1/dev-docs/00-TARGET_SYSTEM.md"),
-    Path("free/v0.1/dev-docs/03-architecture/ARCHITECTURE_OVERVIEW.md"),
-    Path(
-        "free/v0.1/dev-docs/90-reports/20260410-terminal-D6-native-outer-launcher-proof.md"
-    ),
-    Path(
-        "free/v0.1/dev-docs/90-reports/20260411-terminal-D7-terminal-bundle-productization-proof.md"
-    ),
-    Path(
-        "free/v0.1/dev-docs/90-reports/20260412-terminal-EVID-D7RC1D-1-external-release-concretization-closeout.md"
-    ),
+    Path("Cargo.toml"),
+    Path("Cargo.lock"),
 }
 TRACKED_SCRIPT_RELATIVE_PATHS = {
     Path("scripts/prepare-public-run.sh"),
@@ -65,21 +59,6 @@ TRACKED_SCRIPT_RELATIVE_PATHS = {
     Path("scripts/first-success.sh"),
     Path("scripts/check-beta-release-contract.sh"),
 }
-TRACKED_DEV_DOC_EXACT_RELATIVE_PATHS = {
-    Path("free/v0.1/dev-docs/00-TARGET_SYSTEM.md"),
-    Path("free/v0.1/dev-docs/03-architecture/ARCHITECTURE_OVERVIEW.md"),
-    Path(
-        "free/v0.1/dev-docs/90-reports/20260410-terminal-D6-native-outer-launcher-proof.md"
-    ),
-    Path(
-        "free/v0.1/dev-docs/90-reports/20260411-terminal-D7-terminal-bundle-productization-proof.md"
-    ),
-    Path(
-        "free/v0.1/dev-docs/90-reports/20260412-terminal-EVID-D7RC1D-1-external-release-concretization-closeout.md"
-    ),
-}
-
-
 def fail(message: str) -> RuntimeError:
     return RuntimeError(message)
 
@@ -90,6 +69,7 @@ class Roots:
     script_dir: Path
     standalone_root: Path
     version_root: Path
+    public_family_root: Path
     free_family_root: Path
     source_root: Path
     public_root: Path
@@ -108,17 +88,20 @@ def resolve_roots() -> Roots:
     script_dir = script_path.parent
     standalone_root = script_dir.parent
     version_root = standalone_root.parent
-    free_family_root = version_root.parent
+    public_family_root = version_root.parent
+    free_family_root = public_family_root.parent
     source_root = free_family_root.parent
-    public_root = source_root / "public" / "free-v0.1"
+    public_root = standalone_root
     output_root = standalone_root / "target" / "shipping" / "S2" / "github-publication-branch"
 
     if script_dir != standalone_root / "scripts":
         raise fail(f"unexpected SCRIPT_DIR: {script_dir}")
     if standalone_root.name != "0":
         raise fail(f"unexpected STANDALONE_ROOT: {standalone_root}")
-    if version_root.name != "v0.1":
+    if version_root.name != "v01":
         raise fail(f"unexpected VERSION_ROOT: {version_root}")
+    if public_family_root.name != "public":
+        raise fail(f"unexpected PUBLIC_FAMILY_ROOT: {public_family_root}")
     if free_family_root.name != "free":
         raise fail(f"unexpected FREE_FAMILY_ROOT: {free_family_root}")
     if source_root.name != "CYRUNE" or source_root.parent.name != "Distro":
@@ -131,6 +114,7 @@ def resolve_roots() -> Roots:
         script_dir=script_dir,
         standalone_root=standalone_root,
         version_root=version_root,
+        public_family_root=public_family_root,
         free_family_root=free_family_root,
         source_root=source_root,
         public_root=public_root,
@@ -152,43 +136,36 @@ def is_forbidden_relative_path(relative_path: Path) -> bool:
 
 def is_allowed_tracked_relative_path(relative_path: Path) -> bool:
     if relative_path in {
+        Path(".gitignore"),
+        Path(".github/workflows/public-ci.yml"),
         Path("README.md"),
         Path("README.ja.md"),
-        Path(".gitignore"),
+        Path("Cargo.toml"),
+        Path("Cargo.lock"),
         Path("LICENSE"),
         Path("LICENSE-APACHE"),
         Path("LICENSE-MIT"),
         Path("THIRD-PARTY-NOTICES.md"),
-        Path(".github/workflows/public-ci.yml"),
     }:
         return True
     if relative_path.parts[:1] == ("docs",):
         return True
     if relative_path in TRACKED_SCRIPT_RELATIVE_PATHS:
         return True
-    if relative_path in {Path("free/v0.1/0/Cargo.toml"), Path("free/v0.1/0/Cargo.lock")}:
+    if relative_path.parts[:2] == ("Adapter", "v0.1"):
         return True
-    if relative_path.parts[:5] == ("free", "v0.1", "0", "Adapter", "v0.1"):
+    if relative_path.parts[:2] == ("CRANE-Kernel", "v0.1"):
         return True
-    if relative_path.parts[:5] == ("free", "v0.1", "0", "CRANE-Kernel", "v0.1"):
+    if relative_path.parts[:1] == ("crates",):
         return True
-    if relative_path.parts[:4] == ("free", "v0.1", "0", "crates"):
+    if relative_path.parts[:1] == ("resources",):
         return True
-    if relative_path.parts[:4] == ("free", "v0.1", "0", "resources"):
-        return True
-    if relative_path.parts[:4] == ("free", "v0.1", "0", "scripts") and relative_path.suffix in {
+    if relative_path.parts[:1] == ("scripts",) and relative_path.suffix in {
         ".sh",
         ".py",
-    } and len(relative_path.parts) == 5:
+    } and len(relative_path.parts) == 2:
         return True
-    if relative_path.parts[:4] == ("free", "v0.1", "dev-docs", "summary"):
-        return True
-    if (
-        relative_path.parts[:4] == ("free", "v0.1", "dev-docs", "90-reports")
-        and relative_path.suffix == ".md"
-    ):
-        return True
-    if relative_path in TRACKED_DEV_DOC_EXACT_RELATIVE_PATHS:
+    if relative_path.parts[:1] == ("tests",):
         return True
     return False
 

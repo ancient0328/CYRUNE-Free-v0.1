@@ -3,7 +3,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PUBLIC_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-FREE_ROOT="$PUBLIC_ROOT/free/v0.1/0"
+FREE_ROOT="$PUBLIC_ROOT"
 STATE_ROOT="$FREE_ROOT/target/public-run"
 REPORT_PATH="$STATE_ROOT/first-success-report.json"
 CYRUNE_HOME="$STATE_ROOT/home"

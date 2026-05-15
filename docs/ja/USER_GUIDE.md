@@ -63,7 +63,7 @@ host には次が必要です。
 
 ### 5.1 prepare-public-run
 
-この step は configured release carrier を download し、filename、size、SHA256、tar member safety を検証し、home template を public-run state へ展開し、Free source tree から runtime binaries を build し、`cyr` と `cyrune-daemon` を `free/v0.1/0/target/public-run/bin/` に配置します。
+この step は configured release carrier を download し、filename、size、SHA256、tar member safety を検証し、home template を public-run state へ展開し、Free source tree から runtime binaries を build し、`cyr` と `cyrune-daemon` を `target/public-run/bin/` に配置します。
 
 ### 5.2 doctor
 
@@ -88,15 +88,15 @@ cyr verify first-success
 `prepare-public-run.sh` 成功後、public-run state は次に作成されます。
 
 ```text
-free/v0.1/0/target/public-run/
+target/public-run/
 ```
 
 `first-success.sh` 成功後、主に次を確認します。
 
-- `free/v0.1/0/target/public-run/home/ledger/manifests/index.jsonl`
-- `free/v0.1/0/target/public-run/home/ledger/evidence/<evidence_id>/`
-- `free/v0.1/0/target/public-run/home/ledger/terminal-bindings/<evidence_id>.json`
-- `free/v0.1/0/target/public-run/home/working/working.json`
+- `target/public-run/home/ledger/manifests/index.jsonl`
+- `target/public-run/home/ledger/evidence/<evidence_id>/`
+- `target/public-run/home/ledger/terminal-bindings/<evidence_id>.json`
+- `target/public-run/home/working/working.json`
 
 ## 7. 失敗時の扱い
 

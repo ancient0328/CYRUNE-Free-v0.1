@@ -5,7 +5,7 @@ from pathlib import Path
 
 PUBLIC_ROOT = Path(__file__).resolve().parents[1]
 WORKFLOW = PUBLIC_ROOT / ".github" / "workflows" / "public-ci.yml"
-REPORT_PATH = "free/v0.1/0/target/public-run/first-success-report.json"
+REPORT_PATH = "target/public-run/first-success-report.json"
 
 
 class PublicCiWorkflowTest(unittest.TestCase):
@@ -54,11 +54,11 @@ class PublicCiWorkflowTest(unittest.TestCase):
         rust_test_step = self._step("- name: Check Rust tests")
 
         self.assertIn(
-            "CYRUNE_TEST_SHIPPING_HOME_ROOT: ${{ github.workspace }}/free/v0.1/0/target/public-run/home",
+            "CYRUNE_TEST_SHIPPING_HOME_ROOT: ${{ github.workspace }}/target/public-run/home",
             rust_test_step,
         )
         self.assertIn(
-            "run: cargo test --manifest-path free/v0.1/0/Cargo.toml --workspace --all-targets",
+            "run: cargo test --manifest-path Cargo.toml --workspace --all-targets",
             rust_test_step,
         )
 

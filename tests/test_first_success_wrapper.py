@@ -38,17 +38,13 @@ class FirstSuccessWrapperTest(unittest.TestCase):
                 stderr=subprocess.PIPE,
             )
 
-            report_path = (
-                root / "free" / "v0.1" / "0" / "target" / "public-run" / "first-success-report.json"
-            )
-            observed_home = (
-                root / "free" / "v0.1" / "0" / "target" / "public-run" / "observed-home.txt"
-            )
+            report_path = root / "target" / "public-run" / "first-success-report.json"
+            observed_home = root / "target" / "public-run" / "observed-home.txt"
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertEqual(report_path.read_text(encoding="utf-8").strip(), result.stdout.strip())
             self.assertEqual(
                 observed_home.read_text(encoding="utf-8").strip(),
-                str(root / "free" / "v0.1" / "0" / "target" / "public-run" / "home"),
+                str(root / "target" / "public-run" / "home"),
             )
 
     def test_verifier_failure_propagates_non_zero_status(self) -> None:
@@ -71,9 +67,7 @@ class FirstSuccessWrapperTest(unittest.TestCase):
                 stderr=subprocess.PIPE,
             )
 
-            report_path = (
-                root / "free" / "v0.1" / "0" / "target" / "public-run" / "first-success-report.json"
-            )
+            report_path = root / "target" / "public-run" / "first-success-report.json"
             self.assertNotEqual(result.returncode, 0)
             self.assertEqual(report_path.read_text(encoding="utf-8").strip(), result.stdout.strip())
             self.assertIn('"failure_code":"FSV-TEST"', report_path.read_text(encoding="utf-8"))
@@ -90,7 +84,7 @@ class FirstSuccessWrapperTest(unittest.TestCase):
         temp = tempfile.TemporaryDirectory()
         root = Path(temp.name)
         scripts_dir = root / "scripts"
-        cyr_dir = root / "free" / "v0.1" / "0" / "target" / "public-run" / "bin"
+        cyr_dir = root / "target" / "public-run" / "bin"
         scripts_dir.mkdir(parents=True)
         cyr_dir.mkdir(parents=True)
         shutil.copy2(SCRIPT, scripts_dir / "first-success.sh")
