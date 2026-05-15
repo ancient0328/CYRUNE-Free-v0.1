@@ -1,6 +1,6 @@
 # Problem Statement（Technical Edition）
 
-**Public Free v0.1 scope note**: この文書は構造的問題と CYRUNE の target model を説明する。public beta が enforcement-complete classification / MAC、OS-level sandbox isolation、Pro / Enterprise / CITADEL scope、native distribution、production maturity を実装済みであるとは主張しない。
+**Public Free v0.1 scope note**: この文書は構造的問題と CYRUNE の target model を説明する。public beta が enforcement-complete classification / MAC、OS-level sandbox isolation、より広い製品ライン scope、native distribution、production maturity を実装済みであるとは主張しない。
 
 **Language note**: この文書は日本語 companion です。public GitHub entry path の primary problem statement は `CYRUNE_ProblemStatement-En.md` です。
 
@@ -195,7 +195,7 @@ policy_pack によって allow 明示
 
 複数モデル比較はベンチマーク的。
 
-しかし Pro の multi-agent は：
+しかし複数ロール検査は：
 
 * Planner（仮説生成）
 * Critic（反証）

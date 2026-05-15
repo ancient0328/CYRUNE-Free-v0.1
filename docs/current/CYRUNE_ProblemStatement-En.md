@@ -1,6 +1,6 @@
 # Problem Statement
 
-**Public Free v0.1 scope note**: This problem statement describes the structural problem and CYRUNE target model. It is not a claim that this public beta implements enforcement-complete classification / MAC, OS-level sandbox isolation, Pro / Enterprise / CITADEL scope, native distribution, or production maturity.
+**Public Free v0.1 scope note**: This problem statement describes the structural problem and CYRUNE target model. It is not a claim that this public beta implements enforcement-complete classification / MAC, OS-level sandbox isolation, broader product-line scope, native distribution, or production maturity.
 
 **Language note**: This English file is the primary public problem statement. `CYRUNE_ProblemStatement-ja.md` is the Japanese companion for the same structural framing.
 
@@ -199,8 +199,6 @@ It will be determined by:
 * Deterministic governance
 
 CYRUNE exists to provide that layer.
-
-CITADEL hardens it.
 
 CRANE formalizes its contracts.
 

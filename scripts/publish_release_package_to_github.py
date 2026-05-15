@@ -39,7 +39,7 @@ RELEASE_BODY = (
     "CYRUNE Free v0.1 public beta release-contract surface. "
     "This beta does not claim production maturity, native installer distribution, "
     "OS-level sandbox enforcement, enforcement-complete classification/MAC, "
-    "or Pro / Enterprise / CITADEL scope."
+    "or broader product-line scope."
 )
 ASSET_FILENAME = "cyrune-free-v0.1.1-beta.1.tar.gz"
 ARCHIVE_BASENAME = ASSET_FILENAME.removesuffix(".tar.gz")

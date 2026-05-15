@@ -3,7 +3,7 @@
 ## 0. Public Entry
 
 For the current accepted public corpus of CYRUNE Free v0.1, start with `../CYRUNE_Free_Public_Index.md`.
-This page is a product overview of CYRUNE as a whole. It is not a claim that this Free v0.1 public beta implements every CYRUNE or CITADEL enforcement layer.
+This page is a product overview of CYRUNE as a whole. It is not a claim that this Free v0.1 public beta implements every product-wide enforcement layer.
 
 ## 1. What is CYRUNE?
 
@@ -17,7 +17,6 @@ It is not a cloud service.
 
 CYRUNE is a **knowledge control operating system** that defines structure, classification governance, citation-bound reasoning, and auditability over intelligent systems.
 
-Where CITADEL represents the hardened defense distribution,
 CYRUNE represents the general-purpose control OS for high-trust environments.
 
 ---
@@ -198,23 +197,19 @@ CYRUNE is designed for:
 
 * Medical institutions
 * Financial institutions
-* Regulated enterprises
+* Regulated organizations
 * Research facilities
 * Government agencies
 * Organizations requiring knowledge control
 
-CITADEL is the hardened defense distribution of CYRUNE.
-
 ---
 
-## 12. Relationship to CRANE and CITADEL
+## 12. Relationship to CRANE
 
 * **CRANE**: OSS Kernel (control contracts)
 * **CYRUNE**: Commercial control operating system
-* **CITADEL**: Hardened defense distribution of CYRUNE
 
 CYRUNE generalizes control.
-CITADEL maximizes enforcement.
 
 ---
 

@@ -11,7 +11,7 @@
 This document is the public authority/reference map for CYRUNE Free v0.1.
 It is not the product overview. The product-first entry points are the root `README.md` and `docs/GETTING_STARTED.md`.
 
-This index points to current public truth and separated reference shelves. It does not make task roadmaps, raw proof payloads, historical drafts, or deferred tier documents authoritative for the public beta.
+This index points to current public truth and separated reference shelves. It does not make task roadmaps, raw proof payloads, or internal operational documents authoritative for the public beta.
 
 Japanese companion material is available under `docs/ja/`. Japanese companion documents do not override this English public index.
 
@@ -33,9 +33,7 @@ The Japanese technical problem statement at `docs/current/CYRUNE_ProblemStatemen
 Read these only when additional background is needed:
 
 1. `docs/current/CYRUNE_Free_v0.1_Diagrams.html`
-2. `docs/historical/`
-3. `docs/deferred/`
-4. source-side public dev-docs at `Distro/CYRUNE/free/public/v01/dev-docs/`
+2. source-side public dev-docs at `Distro/CYRUNE/free/public/v01/dev-docs/`
 
 The source-side public dev-docs tree contains development history, evidence reports, and operational notes. It does not override the public beta claim boundary, the repository publication model, or the primary reading order in this index.
 
@@ -70,8 +68,8 @@ The following must not be treated as current public truth authority:
 
 1. task-level roadmaps
 2. raw proof / raw validation payloads
-3. historical / draft / superseded documents
-4. deferred Pro / Pro+ / Enterprise / CITADEL tier scope
+3. draft / superseded documents
+4. broader product-line scope outside this Free v0.1 public beta
 5. full Control OS product maturity
 6. native distributable packaging
 7. concrete reverse-DNS bundle identifier
@@ -80,15 +78,11 @@ The following must not be treated as current public truth authority:
 10. concrete notarization provider value
 11. signed update package delivery
 12. a `v0.1` branch as the publication model
-13. Pro / Pro+ / Enterprise / CITADEL product surfaces as part of the Free repository license grant
+13. broader product-line surfaces as part of the Free repository license grant
 
 ## 7. Shelf Meaning
 
 `docs/current/` contains current public product and problem-statement references.
-
-`docs/deferred/` contains documents that may be relevant to future publication decisions, but are not automatically adopted into Free v0.1 public beta claims.
-
-`docs/historical/` contains historical or non-authoritative material retained for background only.
 
 `docs/ja/` contains Japanese companion documents.
 
@@ -96,7 +90,7 @@ The following must not be treated as current public truth authority:
 
 CYRUNE Free v0.1 public beta is a release-contract repository surface that explains and executes the public first-success path.
 
-This beta claim does not include production maturity, native distributable packaging, OS-level sandbox enforcement, enforcement-complete classification / MAC, Pro / Enterprise / CITADEL scope, signing, notarization, installer distribution, or signed update package delivery.
+This beta claim does not include production maturity, native distributable packaging, OS-level sandbox enforcement, enforcement-complete classification / MAC, broader product-line scope, signing, notarization, installer distribution, or signed update package delivery.
 
 ## 9. Repository Publication Model
 

@@ -2,7 +2,7 @@
 
 CYRUNE Free v0.1 is a **public beta** repository for the single-user CYRUNE Free runtime. It is shaped as a release contract for the first-success path: prepare the public-run state, run `cyr doctor`, then run `cyr verify first-success` through the packaged Control Plane path.
 
-This repository is a public-facing Free v0.1 publication unit. It is not a native installer, not a signed desktop distribution, and not the Pro / Enterprise / CITADEL product surface.
+This repository is a public-facing Free v0.1 publication unit. It is not a native installer and not a signed desktop distribution.
 
 ## Versioning
 
@@ -47,7 +47,7 @@ Japanese companion documents do not override the English public claim boundary i
 
 - Sandbox scope: this beta documents and uses sandbox specification normalization / validation. It does not claim OS-level process isolation.
 - Classification / MAC scope: CYRUNE product docs describe the intended classification and MAC model. This Free v0.1 public beta does not claim enforcement-complete classification / MAC lattice or clearance governance.
-- Evidence scope: first-success creates local runtime evidence for the no-LLM path and terminal-binds the accepted evidence to `working/working.json`. It does not prove production maturity, native distribution, signing, notarization, Pro features, Enterprise governance, or CITADEL hardening.
+- Evidence scope: first-success creates local runtime evidence for the no-LLM path and terminal-binds the accepted evidence to `working/working.json`. It does not prove production maturity, native distribution, signing, notarization, or broader product-line governance.
 - Signed update scope: product-wide docs may describe signed update or no-self-update discipline as a design direction. This Free v0.1 public beta does not ship a signed updater or signed update channel.
 
 ## Repository Contents
@@ -61,7 +61,7 @@ Japanese companion documents do not override the English public claim boundary i
 
 CYRUNE Free v0.1 first-party source is licensed under either MIT or Apache-2.0, at your option. See [LICENSE](LICENSE), [LICENSE-MIT](LICENSE-MIT), and [LICENSE-APACHE](LICENSE-APACHE).
 
-Third-party notices for redistributed model/tokenizer resources are tracked in [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md). This Free repository license does not license Pro / Pro+ / Enterprise / CITADEL product surfaces.
+Third-party notices for redistributed model/tokenizer resources are tracked in [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md). This Free repository license applies only to the Free v0.1 first-party source carried here.
 
 ## Not Included
 
@@ -71,5 +71,5 @@ Third-party notices for redistributed model/tokenizer resources are tracked in [
 - Signed update package delivery
 - OS-level sandbox enforcement
 - Enforcement-complete classification / MAC lattice
-- Pro / Pro+ / Enterprise / CITADEL feature surface
+- Broader product-line features
 - Private development / internal operational corpus

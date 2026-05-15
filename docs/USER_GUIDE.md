@@ -12,7 +12,7 @@ CYRUNE Free v0.1 is a single-user public beta package.
 
 It lets a local host prepare public-run state from the pinned beta carrier, run `cyr doctor`, and execute the no-LLM first-success semantic verifier through the packaged Free v0.1 Control Plane path.
 
-This public beta does not claim production maturity, native distribution, OS-level sandbox enforcement, enforcement-complete classification / MAC, Pro / Enterprise / CITADEL scope, signing, notarization, or installer distribution.
+This public beta does not claim production maturity, native distribution, OS-level sandbox enforcement, enforcement-complete classification / MAC, broader product-line scope, signing, notarization, or installer distribution.
 
 ## 2. Repository Contents
 
@@ -118,4 +118,4 @@ It does not prove:
 - signing or notarization
 - OS-level sandbox enforcement
 - enforcement-complete classification / MAC lattice
-- Pro / Pro+ / Enterprise / CITADEL functionality
+- broader product-line functionality

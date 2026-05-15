@@ -70,7 +70,7 @@ It does not claim:
 - concrete signing / notarization values
 - OS-level sandbox process isolation
 - enforcement-complete classification / MAC lattice
-- Pro / Pro+ / Enterprise / CITADEL feature surface
+- broader product-line features
 - private development or internal operational corpus
 
 ## 5. Failure Semantics

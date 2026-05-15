@@ -34,8 +34,8 @@ The public repository has four surfaces:
    `README.md`, `docs/GETTING_STARTED.md`, `docs/FIRST_SUCCESS_EXPECTED.md`, `docs/TROUBLESHOOTING.md`, `docs/CYRUNE_Free_Public_Index.md`
 2. current public docs:
    `docs/current/` plus the guide and engineering docs under `docs/`
-3. separated reference shelves:
-   `docs/historical/`, `docs/deferred/`, `docs/ja/`
+3. companion language shelf:
+   `docs/ja/`
 4. runnable source tree:
    repository root
 
@@ -69,8 +69,6 @@ Top-level layout:
 - `tests/`
 
 `docs/current/` contains current public truth references.
-`docs/deferred/` contains future-publication or upper-tier material that is not adopted into Free v0.1 beta claims.
-`docs/historical/` contains non-authoritative historical material.
 `docs/ja/` contains Japanese companion documents.
 
 The repository root contains the runnable source tree.
@@ -176,7 +174,7 @@ This public beta does not claim:
 - concrete signing / notarization values
 - OS-level sandbox enforcement
 - enforcement-complete classification / MAC lattice
-- Pro / Pro+ / Enterprise / CITADEL feature surface
+- broader product-line features
 
 ## 11. Validation
 

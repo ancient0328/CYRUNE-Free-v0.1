@@ -56,6 +56,12 @@ FORBIDDEN_SUCCESS_PATTERNS = [
     re.compile(r"cyr\s+run\s+--no-llm\s+--input\s+\"ship-goal public first success\""),
     re.compile(r"exit\s+(code\s+)?0\s+(means|proves)\s+(accepted|success)", re.IGNORECASE),
 ]
+FORBIDDEN_PUBLIC_PRODUCT_TERMS = [
+    re.compile(r"\bCITADEL\b"),
+    re.compile(r"\bEnterprise\b"),
+    re.compile(r"\bPro\+?\b"),
+    re.compile(r"Pro\s*/"),
+]
 
 
 class PublicWordingContractTest(unittest.TestCase):
@@ -116,6 +122,15 @@ class PublicWordingContractTest(unittest.TestCase):
         self.assertFalse(any(path.startswith("docs/historical/") for path in scanned))
         self.assertFalse(any(path.startswith("docs/deferred/") for path in scanned))
 
+    def test_public_authored_surface_does_not_expose_upper_tier_product_terms(self) -> None:
+        violations: list[str] = []
+        for path in self._public_authored_text_files():
+            for lineno, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
+                if any(pattern.search(line) for pattern in FORBIDDEN_PUBLIC_PRODUCT_TERMS):
+                    violations.append(f"{path.relative_to(PUBLIC_ROOT)}:{lineno}:{line.strip()}")
+
+        self.assertEqual(violations, [])
+
     def _current_public_markdown_files(self) -> list[Path]:
         files = [PUBLIC_ROOT / "README.md", PUBLIC_ROOT / "README.ja.md"]
         for path in (PUBLIC_ROOT / "docs").rglob("*.md"):
@@ -124,6 +139,22 @@ class PublicWordingContractTest(unittest.TestCase):
                 continue
             files.append(path)
         files.extend(DEV_DOCS_CONTRACTS)
+        return sorted(files)
+
+    def _public_authored_text_files(self) -> list[Path]:
+        roots = [
+            PUBLIC_ROOT / ".github",
+            PUBLIC_ROOT / "docs",
+            PUBLIC_ROOT / "scripts",
+        ]
+        files = [PUBLIC_ROOT / "README.md", PUBLIC_ROOT / "README.ja.md"]
+        for root in roots:
+            if not root.exists():
+                continue
+            for path in root.rglob("*"):
+                if path.suffix not in {".html", ".md", ".py", ".sh", ".yaml", ".yml"}:
+                    continue
+                files.append(path)
         return sorted(files)
 
 

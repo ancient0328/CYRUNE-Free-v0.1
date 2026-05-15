@@ -32,9 +32,7 @@ product-first entry point は root `README.md` と `docs/GETTING_STARTED.md` で
 追加背景が必要な場合にのみ、次を参照します。
 
 1. `docs/current/CYRUNE_Free_v0.1_Diagrams.html`
-2. `docs/historical/`
-3. `docs/deferred/`
-4. source-side public dev-docs at `Distro/CYRUNE/free/public/v01/dev-docs/`
+2. source-side public dev-docs at `Distro/CYRUNE/free/public/v01/dev-docs/`
 
 source-side public dev-docs は development history、evidence reports、operational notes を含みます。それらは public beta claim boundary、repository publication model、primary reading order を上書きしません。
 
@@ -63,8 +61,8 @@ source-side public dev-docs は development history、evidence reports、operati
 
 1. task-level roadmaps
 2. raw proof / raw validation payloads
-3. historical / draft / superseded documents
-4. deferred Pro / Pro+ / Enterprise / CITADEL tier scope
+3. draft / superseded documents
+4. この Free v0.1 public beta 外のより広い製品ライン scope
 5. full Control OS product maturity
 6. native distributable packaging
 7. concrete reverse-DNS bundle identifier
@@ -72,15 +70,11 @@ source-side public dev-docs は development history、evidence reports、operati
 9. concrete signing identity value
 10. concrete notarization provider value
 11. `v0.1` branch as the publication model
-12. Pro / Pro+ / Enterprise / CITADEL product surfaces が Free repository license grant に含まれること
+12. より広い製品ライン surface が Free repository license grant に含まれること
 
 ## 6. Shelf Meaning
 
 `docs/current/` は current public product and problem-statement references を含みます。
-
-`docs/deferred/` は future publication decisions に関係し得るが、Free v0.1 public beta claims へ自動採用されない文書を含みます。
-
-`docs/historical/` は background のためだけに保持される historical / non-authoritative material を含みます。
 
 `docs/ja/` は Japanese companion documents を含みます。
 
@@ -88,7 +82,7 @@ source-side public dev-docs は development history、evidence reports、operati
 
 CYRUNE Free v0.1 public beta は、current product truth、beta release contract、public first-success path、non-claim boundary を公開する repository content surface です。
 
-この beta claim は、production maturity、native distributable packaging、OS-level sandbox enforcement、enforcement-complete classification / MAC、Pro / Enterprise / CITADEL scope、signing、notarization、installer distribution を含みません。
+この beta claim は、production maturity、native distributable packaging、OS-level sandbox enforcement、enforcement-complete classification / MAC、より広い製品ライン scope、signing、notarization、installer distribution を含みません。
 
 ## 8. Repository Publication Model
 

@@ -104,7 +104,7 @@ This first-success path does not prove:
 - concrete signing or notarization
 - OS-level sandbox process isolation
 - enforcement-complete classification / MAC lattice
-- Pro / Pro+ / Enterprise / CITADEL feature scope
+- broader product-line feature scope
 - production maturity
 
 ## 6. Failure Reading
