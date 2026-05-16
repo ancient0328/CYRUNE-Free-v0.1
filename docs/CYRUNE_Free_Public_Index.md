@@ -33,8 +33,10 @@ Supplementary public references are limited to files present in this repository.
 
 1. `docs/current/CYRUNE_Free_v0.1_Diagrams.html`
 2. `docs/current/CYRUNE.md`
+3. `docs/evidence/public-run-smoke/README.md`
 
 `docs/current/CYRUNE.md` describes product direction. It is not the first public beta claim authority.
+`docs/evidence/public-run-smoke/` records commit- and environment-specific public-run smoke observations. It is not release closeout evidence and does not replace `docs/BETA_CRITERIA.md`.
 
 ## 4. Public Repository Boundary
 
@@ -83,6 +85,8 @@ The following must not be treated as current public truth authority:
 `docs/current/` contains current public product and problem-statement references.
 
 `docs/ja/` contains Japanese companion documents.
+
+`docs/evidence/public-run-smoke/` contains public-run smoke reproducibility observations for specific commits and environments.
 
 ## 8. Public Beta Claim Boundary
 

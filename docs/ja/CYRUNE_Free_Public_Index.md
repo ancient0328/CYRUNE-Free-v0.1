@@ -32,8 +32,10 @@ supplementary public references は、この repository 内に存在する file 
 
 1. `docs/current/CYRUNE_Free_v0.1_Diagrams.html`
 2. `docs/current/CYRUNE.md`
+3. `docs/evidence/public-run-smoke/README.md`
 
 `docs/current/CYRUNE.md` は product direction を説明します。これは first public beta claim authority ではありません。
+`docs/evidence/public-run-smoke/` は、commit と environment ごとの public-run smoke observation を記録します。これは release closeout evidence ではなく、`docs/BETA_CRITERIA.md` を置き換えません。
 
 ## 4. Authoritative Public Truth
 
@@ -76,6 +78,8 @@ supplementary public references は、この repository 内に存在する file 
 `docs/current/` は current public product and problem-statement references を含みます。
 
 `docs/ja/` は Japanese companion documents を含みます。
+
+`docs/evidence/public-run-smoke/` は、特定 commit と環境に対する public-run smoke reproducibility observations を含みます。
 
 ## 7. Public Beta Claim Boundary
 
